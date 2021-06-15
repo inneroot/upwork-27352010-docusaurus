@@ -12,13 +12,13 @@
   width: 200px;
 }
 
-.section__wrapper {
+.wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.section__container {
+.container {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -48,7 +48,7 @@
 
 #text {
   margin-top: 135px;
-  padding-left: 21vw;
+  padding-left: 20.5vw;
 }
 
 #h1 {

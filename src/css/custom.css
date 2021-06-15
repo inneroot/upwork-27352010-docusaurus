@@ -24,9 +24,10 @@
   --ifm-navbar-link-color: #091e42;
   --ifm-font-weight-semibold: 600;
   --ifm-navbar-padding-vertical: 30px;
-  --ifm-navbar-padding-horizontal: 30px;
+  --ifm-navbar-padding-horizontal: 24px;
   --ifm-navbar-shadow: none;
   --global-background-color: #f2f8ff;
+  --footer-link-color: #5a9dff;
 }
 
 .react-toggle {
@@ -41,6 +42,7 @@ body {
 
 .main__box {
   background-position: top center;
+  background-repeat: no-repeat;
   background-image: url(/img/hero-curve.svg);
 }
 
@@ -68,6 +70,24 @@ h1 span {
   background-color: #aac7f0;
 }
 
+h2 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 120%;
+}
+
+h3::before {
+  content: url(/img/sharp.svg);
+  padding-right: 0.6ch;
+}
+h3 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 150%;
+}
+
 .btn {
   padding: 1rem;
   border: 4px solid var(--ifm-color-primary-light);
@@ -92,4 +112,17 @@ h1 span {
 .btn_primary:hover {
   background-color: var(--ifm-color-primary);
   color: var(--global-background-color);
+}
+.btn_arrow {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.btn_arrow::after {
+  content: url(/img/btn_arrow.svg);
+  padding-left: 10px;
+  position: relative;
+  top: 3px;
+}
+.btn_arrow:hover::after {
+  content: url(/img/btn_arrow_hover.svg);
 }

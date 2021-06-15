@@ -1,0 +1,149 @@
+#wrapper2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6rem 20.5vw 0 20.5vw;
+}
+
+#wrapper3 {
+  margin: 30px 20.5vw 0 20.5vw;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+#wrapper4 {
+  display: flex;
+  align-items: center;
+  margin: 8.5rem 20.5vw 120px 20.5vw;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.card {
+  max-width: 450px;
+}
+
+.card h2 {
+  margin-bottom: 2rem;
+}
+
+.card ul {
+  list-style-image: url(/img/sharp.svg);
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.card ul li {
+  padding-bottom: 1rem;
+}
+
+.card1 {
+  composes: card;
+}
+
+.card2 {
+  composes: card;
+  margin-top: 130px;
+  align-self: flex-end;
+}
+
+#open__container {
+  padding: 30px 45px;
+}
+
+#open_svg {
+  margin-top: -10px;
+}
+#open {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 120%;
+  max-width: 40rem;
+}
+
+.open_box {
+  display: flex;
+  width: 100%;
+  justify-self: start;
+}
+
+.close_box {
+  margin-top: 14px;
+  display: flex;
+  justify-self: start;
+}
+
+#business_card {
+  padding: 2.5rem;
+  /* border: 1px solid red; */
+  border-radius: 20px;
+  justify-self: center;
+  width: 507px;
+  height: 280px;
+  overflow: hidden;
+  background: #f2f8ff;
+  background-image: url(/img/business_card_bg.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  box-shadow: 0px 20px 40px rgba(9, 30, 66, 0.14);
+  border-radius: 20px;
+}
+
+#business_card_logo {
+  height: 1.5rem;
+}
+
+#business_card p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+#business_card_contacts {
+  margin-top: 47px;
+  display: grid;
+  width: 87%;
+  grid-template-columns: auto auto;
+}
+.card_contact {
+  margin-bottom: 9px;
+}
+.card_contact::before {
+  position: relative;
+  top: 5px;
+  margin-right: 1ch;
+}
+.card_email {
+  composes: card_contact;
+}
+.card_telegram {
+  composes: card_contact;
+}
+.card_phone {
+  composes: card_contact;
+}
+.card_whatsapp {
+  composes: card_contact;
+}
+.card_email::before {
+  content: url(/img/email.svg);
+}
+
+.card_telegram::before {
+  content: url(/img/telegram.svg);
+}
+
+.card_phone::before {
+  content: url(/img/phone.svg);
+}
+
+.card_whatsapp::before {
+  content: url(/img/whatsapp.svg);
+}

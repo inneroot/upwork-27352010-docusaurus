@@ -5,8 +5,8 @@ import styles from "./SectionOne.module.css";
 
 export default function SectionOne() {
   return (
-    <section className={styles.section__wrapper}>
-      <div className={styles.section__container}>
+    <section className={styles.wrapper}>
+      <div className={styles.container}>
         <div id={styles.text}>
           <h1 id={styles.h1}>
             Профессиональные практики <span>DevOps</span>
@@ -19,7 +19,7 @@ export default function SectionOne() {
             <Link to="#" className="btn btn_primary">
               Презентация
             </Link>
-            <Link to="#" className="btn prj_btn">
+            <Link to="#" className="btn">
               Задать вопрос
             </Link>
           </div>
