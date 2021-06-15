@@ -9,8 +9,7 @@
   margin: 30px 20.5vw 0 20.5vw;
   display: flex;
   flex-flow: column wrap;
-  background: url(/img/8.svg) top center no-repeat,
-    url(/img/8bg.svg) left center no-repeat;
+  background: url(/img/8bg.svg) center top no-repeat;
 }
 
 #wrapper4 {
