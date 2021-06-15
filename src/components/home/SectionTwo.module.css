@@ -9,6 +9,8 @@
   margin: 30px 20.5vw 0 20.5vw;
   display: flex;
   flex-flow: column wrap;
+  background: url(/img/8.svg) top center no-repeat,
+    url(/img/8bg.svg) left center no-repeat;
 }
 
 #wrapper4 {
@@ -17,7 +19,6 @@
   margin: 8.5rem 20.5vw 120px 20.5vw;
   justify-content: space-between;
   flex-flow: row wrap;
-  background-image: url();
 }
 
 .card {
@@ -82,7 +83,6 @@
 
 #business_card {
   padding: 2.5rem;
-  /* border: 1px solid red; */
   border-radius: 20px;
   justify-self: center;
   width: 507px;
