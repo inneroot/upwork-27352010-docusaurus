@@ -1,14 +1,18 @@
 import React from "react";
-// import clsx from "clsx";
 import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./SectionTwo.module.css";
 
 export default function SectionTwo() {
+  const OpenSrc = useBaseUrl("/img/open.svg");
+  const CloseSrc = useBaseUrl("/img/close.svg");
+  const LogoSrc = useBaseUrl("/img/logo.svg");
+
   return (
     <>
       <section id={styles.wrapper2}>
         <div className={styles.open_box}>
-          <img id={styles.open_svg} src="img/open.svg" />
+          <img id={styles.open_svg} src={OpenSrc} />
           <div id={styles.open__container}>
             <h1 id={styles.open}>Мы предлагаем услуги в двух направлениях</h1>
           </div>
@@ -55,7 +59,7 @@ export default function SectionTwo() {
       </section>
       <section id={styles.wrapper4}>
         <div className={styles.close_box}>
-          <img id={styles.open_svg} src="img/close.svg" />
+          <img id={styles.open_svg} src={CloseSrc} />
           <div id={styles.open__container}>
             <h1 id={styles.open}>
               Свяжитесь
@@ -64,7 +68,7 @@ export default function SectionTwo() {
           </div>
         </div>
         <div id={styles.business_card}>
-          <img id={styles.business_card_logo} src="/img/logo.svg" />
+          <img id={styles.business_card_logo} src={LogoSrc} />
           <p>Профессиональные практики DevOps</p>
           <div id={styles.business_card_contacts}>
             <a className={styles.card_email} href="mailto:it-company@info.ru">

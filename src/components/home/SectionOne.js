@@ -1,9 +1,10 @@
 import React from "react";
-// import clsx from "clsx";
 import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./SectionOne.module.css";
 
 export default function SectionOne() {
+  const illustration = useBaseUrl("/img/illustration.svg");
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -25,7 +26,7 @@ export default function SectionOne() {
           </div>
         </div>
         <div id={styles.image}>
-          <img src="/img/illustration.svg" />
+          <img src={illustration} />
         </div>
       </div>
     </section>
