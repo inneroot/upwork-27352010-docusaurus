@@ -17,6 +17,7 @@
   margin: 8.5rem 20.5vw 120px 20.5vw;
   justify-content: space-between;
   flex-flow: row wrap;
+  background-image: url();
 }
 
 .card {

@@ -1,19 +1,7 @@
-/* stylelint-disable docusaurus/copyright-header */
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/** =================== MONTSERRAT =================== **/
 
-@font-face {
-  font-family: Montserrat;
-  src: url(/font/Montserrat-Regular.ttf);
-}
-
-@font-face {
-  font-family: Montserrat-bold;
-  src: url(/font/Montserrat-Bold.ttf);
-}
+/** Montserrat Thin **/
+@import "Montserrat.css";
 
 /* You can override the default Infima variables here. */
 :root {
@@ -57,7 +45,7 @@ body {
 }
 
 h1 {
-  font-family: Montserrat-bold;
+  font-family: "Montserrat";
   font-size: 3rem;
   font-weight: 600;
   font-size: 48px;
