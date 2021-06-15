@@ -1,0 +1,1 @@
+(self.webpackChunkdocusaurus=self.webpackChunkdocusaurus||[]).push([[960],{5364:function(u){"use strict";u.exports=JSON.parse('{"allTagsPath":"/upwork-27352010-docusaurus/blog/tags","slug":"hello","name":"hello","count":2,"permalink":"/upwork-27352010-docusaurus/blog/tags/hello"}')}}]);
