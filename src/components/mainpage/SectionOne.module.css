@@ -1,0 +1,60 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
+
+.section__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero__text {
+  line-height: 150%;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.hero__btns {
+  display: flex;
+}
+
+.hero__btns a {
+  margin-right: 20px;
+}
+
+#image {
+  margin-left: -55px;
+  margin-top: -5px;
+}
+
+#text {
+  margin-top: 135px;
+  padding-left: 21vw;
+}
+
+#h1 {
+  letter-spacing: 0;
+}
+
+#h1 span {
+  margin-left: -4px;
+}

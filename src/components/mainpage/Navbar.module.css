@@ -1,0 +1,29 @@
+.navigation {
+  padding: var(--ifm-navbar-padding-vertical)
+    var(--ifm-navbar-padding-horizontal);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_links {
+  display: flex;
+  margin-right: -10px;
+}
+
+.nav_links a {
+  margin-right: 48px;
+  line-height: 150%;
+  color: var(--ifm-navbar-link-color);
+  text-decoration: none;
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+.nav_links a:hover {
+  color: var(--ifm-navbar-link-hover-color);
+  font-size: var(--ifm-font-weight-semibold);
+}
+
+.logo {
+  margin: 2px 0 0 2px;
+}

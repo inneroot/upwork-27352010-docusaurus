@@ -5,21 +5,91 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
-:root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
-  --ifm-code-font-size: 95%;
+@font-face {
+  font-family: Montserrat;
+  src: url(/font/Montserrat-Regular.ttf);
 }
 
-.docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
+@font-face {
+  font-family: Montserrat-bold;
+  src: url(/font/Montserrat-Bold.ttf);
+}
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-font-family-base: Montserrat;
+  --ifm-color-primary: #091e42;
+  --ifm-color-primary-light: #0052cc;
+  --ifm-navbar-link-hover-color: #0052cc;
+  --ifm-navbar-link-color: #091e42;
+  --ifm-font-weight-semibold: 600;
+  --ifm-navbar-padding-vertical: 30px;
+  --ifm-navbar-padding-horizontal: 30px;
+  --ifm-navbar-shadow: none;
+  --global-background-color: #f2f8ff;
+}
+
+.react-toggle {
+  display: none;
+}
+
+body {
+  color: var(--ifm-color-primary);
+  background-color: var(--global-background-color);
+  position: relative;
+}
+
+.main__box {
+  background-position: top center;
+  background-image: url(/img/hero-curve.svg);
+}
+
+.nalozhenie {
+  background-image: url(/img/1920-.png);
+}
+
+#svg_curve {
+  z-index: -10;
+  position: absolute;
+  width: 2000px;
+}
+
+h1 {
+  font-family: Montserrat-bold;
+  font-size: 3rem;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 120%;
+}
+
+h1 span {
+  border-radius: 4px;
+  padding: 0 4px 4px 4px;
+  background-color: #aac7f0;
+}
+
+.btn {
+  padding: 1rem;
+  border: 4px solid var(--ifm-color-primary-light);
+  color: var(--ifm-color-primary-light);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 4px;
+  padding: 11px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  border: 4px solid var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.btn_primary {
+  background-color: var(--ifm-color-primary-light);
+  color: var(--global-background-color);
+}
+
+.btn_primary:hover {
+  background-color: var(--ifm-color-primary);
+  color: var(--global-background-color);
 }
