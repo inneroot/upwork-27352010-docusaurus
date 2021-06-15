@@ -2,13 +2,13 @@
 module.exports = {
   title: "Гелеор",
   tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
-  baseUrl: "/",
+  url: "https://inneroot.github.io",
+  baseUrl: "/upwork-27352010-docusaurus/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "Гелеор", // Usually your GitHub org/user name.
-  projectName: "docusaurus docs", // Usually your repo name.
+  organizationName: "inneroot", // Usually your GitHub org/user name.
+  projectName: "upwork-27352010-docusaurus", // Usually your repo name.
   themeConfig: {
     disableSwitch: true,
     navbar: {
@@ -67,8 +67,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/inneroot/upwork-27352010-docusaurus",
+          editUrl: "https://github.com/inneroot/upwork-27352010-docusaurus",
         },
         blog: {
           showReadingTime: true,
