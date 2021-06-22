@@ -1,0 +1,11 @@
+.main__box {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-image: url(/img/hero-curve.svg);
+}
+
+#svg_curve {
+  z-index: -10;
+  position: absolute;
+  width: 2000px;
+}

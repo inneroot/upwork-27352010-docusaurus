@@ -2,6 +2,8 @@
 
 /** Montserrat Thin **/
 @import "Montserrat.css";
+@import "docs.css";
+@import "home.css";
 
 /* You can override the default Infima variables here. */
 :root {
@@ -16,32 +18,20 @@
   --ifm-navbar-shadow: none;
   --global-background-color: #f2f8ff;
   --footer-link-color: #5a9dff;
-}
-
-.react-toggle {
-  display: none;
+  --ifm-navbar-background-color: transparent;
+  --doc-sidebar-width: 350px !important;
+  --ifm-toc-border-color: none;
+  --ifm-menu-color-background-active: transparent;
+  --ifm-menu-color: #091e42;
+  --ifm-menu-link-padding-horizontal: 0;
+  --ifm-menu-link-sublist-icon: none;
 }
 
 body {
   color: var(--ifm-color-primary);
   background-color: var(--global-background-color);
+  /* background-image: url(/img/bgdoc.png); */
   position: relative;
-}
-
-.main__box {
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-image: url(/img/hero-curve.svg);
-}
-
-.nalozhenie {
-  /* background-image: url(/img/1920-.png); */
-}
-
-#svg_curve {
-  z-index: -10;
-  position: absolute;
-  width: 2000px;
 }
 
 h1 {

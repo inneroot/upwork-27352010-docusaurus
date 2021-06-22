@@ -1,0 +1,63 @@
+.navbar__inner {
+  padding-top: 4px;
+}
+.navbar__logo {
+  height: 36px;
+  margin-left: 0.5rem;
+}
+
+.navbar__link {
+  margin-right: 14px;
+  line-height: 150%;
+  color: var(--ifm-navbar-link-color);
+  text-decoration: none;
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+.menu {
+  margin-top: 48px;
+  margin-left: 25px;
+  margin-right: 16px;
+}
+
+.menu__link {
+  font-family: Montserrat;
+  font-style: normal;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 0;
+  padding-right: 40px;
+  margin-top: 36px;
+  margin-bottom: 14px;
+}
+
+.menu__link:hover {
+  background-color: transparent;
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+.menu__list-item .menu__list .menu__list-item a {
+  margin-left: 0px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  margin: 10px 0;
+  padding: 6px 40px 6px 16px;
+}
+
+.menu__list .menu__list-item .menu__list .menu__list-item .active {
+  border-left: solid 2px var(--ifm-navbar-link-hover-color);
+  padding-left: 14px;
+  border-radius: 0;
+  color: var(--ifm-navbar-link-hover-color);
+}
+.menu__list-item--collapsed .menu__link--sublist:after {
+  transform: rotateZ(0deg);
+}
+
+.menu__link--sublist:after {
+  background: url(/img/chevron-up.svg) center center no-repeat;
+  top: -2px;
+  right: 2px;
+}

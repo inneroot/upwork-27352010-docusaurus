@@ -10,7 +10,9 @@ module.exports = {
   organizationName: "inneroot", // Usually your GitHub org/user name.
   projectName: "upwork-27352010-docusaurus", // Usually your repo name.
   themeConfig: {
-    disableSwitch: true,
+    colorMode: {
+      disableSwitch: true,
+    },
     navbar: {
       logo: {
         alt: "Гелеор",
