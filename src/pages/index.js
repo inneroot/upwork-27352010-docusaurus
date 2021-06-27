@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/home/Navbar";
 import SectionOne from "../components/home/SectionOne";
 import SectionTwo from "../components/home/SectionTwo";
-import Footer from "../components/home/Footer";
+import Footer from "../theme/Footer/index";
 
 export default function Home() {
   return (

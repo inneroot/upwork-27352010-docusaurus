@@ -40,35 +40,7 @@ module.exports = {
       ],
     },
     footer: {
-      style: "dark",
       links: [
-        {
-          title: "© 2021 Гелеор",
-        },
-        {
-          items: [
-            {
-              label: "Политика конфиденциальности",
-              href: "#",
-            },
-          ],
-        },
-        {
-          items: [
-            {
-              label: "Иллюстрации Freepik Stories",
-              href: "#",
-            },
-          ],
-        },
-        {
-          items: [
-            {
-              label: "Разработка дизайна сайта Анастасия Громова",
-              href: "#",
-            },
-          ],
-        },
       ],
     },
   },
