@@ -11,7 +11,6 @@ function LinkItem(links) {
 export default function Navbar() {
   const { siteConfig } = useDocusaurusContext();
   const navLinks = siteConfig.themeConfig.navbar.items;
-  console.log(navLinks);
   const logoSrc = useBaseUrl("/img/logo.svg");
 
   return (
@@ -21,7 +20,10 @@ export default function Navbar() {
       </div>
       <div className={styles.nav_links}>
         {navLinks.map((link) => (
-          <Link to={link.docId ? `docs/${link.docId}` : link.to}>
+          <Link
+            to={link.docId ? `docs/${link.docId}` : link.to}
+            key={link.label}
+          >
             {link.label}
           </Link>
         ))}

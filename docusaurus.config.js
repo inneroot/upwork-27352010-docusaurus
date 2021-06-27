@@ -39,17 +39,13 @@ module.exports = {
         },
       ],
     },
-    footer: {
-      links: [
-      ],
-    },
   },
   presets: [
     [
       "@docusaurus/preset-classic",
       {
         docs: {
-          //sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl: "https://github.com/inneroot/upwork-27352010-docusaurus",
         },

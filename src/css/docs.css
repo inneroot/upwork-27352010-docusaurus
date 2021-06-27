@@ -95,3 +95,25 @@ article {
   border-radius: 0;
   color: var(--ifm-navbar-link-hover-color);
 }
+.menu__list-pending span {
+  display: inline-block;
+}
+.menu__list-pending span:hover {
+  color: var(--ifm-navbar-link-color);
+}
+
+.menu__link span {
+  margin-left: 10px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 100%;
+  color: var(--ifm-navbar-link-hover-color);
+  border-radius: 4px;
+  background-color: rgba(0, 82, 204, 0.1);
+  padding: 4px 10px;
+}
+.menu__link span:hover {
+  color: var(--ifm-navbar-link-hover-color);
+}
