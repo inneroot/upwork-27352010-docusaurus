@@ -21,12 +21,22 @@ module.exports = {
       items: [
         {
           type: "doc",
-          docId: "intro",
+          docId: "services/building",
           position: "right",
           label: "Услуги",
         },
-        { to: "/blog", label: "О нас", position: "right" },
-        { to: "/blog", label: "Контакты", position: "right" },
+        {
+          type: "doc",
+          docId: "info/about",
+          position: "right",
+          label: "О нас",
+        },
+        {
+          type: "doc",
+          docId: "info/contacts",
+          position: "right",
+          label: "Контакты",
+        },
       ],
     },
     footer: {
@@ -67,7 +77,7 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          //sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl: "https://github.com/inneroot/upwork-27352010-docusaurus",
         },

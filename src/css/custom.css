@@ -8,7 +8,8 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-font-family-base: Montserrat;
-  --ifm-color-primary: #091e42;
+  --ifm-color-primary: #0052cc;
+  --text-color-primary: #091e42;
   --ifm-color-primary-light: #0052cc;
   --ifm-navbar-link-hover-color: #0052cc;
   --ifm-navbar-link-color: #091e42;
@@ -25,12 +26,19 @@
   --ifm-menu-color: #091e42;
   --ifm-menu-link-padding-horizontal: 0;
   --ifm-menu-link-sublist-icon: none;
+  --ifm-container-width-xl: 1560px;
+  --ifm-navbar-padding-horizontal: 0;
+  --ifm-toc-padding-vertical: 20px;
+  --ifm-toc-link-color: #091e42;
 }
 
+.nalozhenie {
+  /* background-image: url(/img/1920-.png); */
+}
 body {
-  color: var(--ifm-color-primary);
+  color: var(--text-color-primary);
   background-color: var(--global-background-color);
-  /* background-image: url(/img/bgdoc.png); */
+  /* background-image: url(/img/1920-.png); */
   position: relative;
 }
 
@@ -88,7 +96,7 @@ h3 {
 }
 
 .btn_primary:hover {
-  background-color: var(--ifm-color-primary);
+  background-color: var(--text-color-primary);
   color: var(--global-background-color);
 }
 .btn_arrow {

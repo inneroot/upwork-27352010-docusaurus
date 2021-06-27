@@ -11,9 +11,9 @@ export default function Navbar() {
         <img src={logoSrc} />
       </div>
       <div className={styles.nav_links}>
-        <Link to="/docs/intro">Услуги</Link>
-        <Link to="/docs/intro">О нас</Link>
-        <Link to="/docs/intro">Контакты</Link>
+        <Link to="/docs/services/building">Услуги</Link>
+        <Link to="/docs/services/building">О нас</Link>
+        <Link to="/docs/services/building">Контакты</Link>
       </div>
     </nav>
   );

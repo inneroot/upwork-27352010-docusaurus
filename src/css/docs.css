@@ -1,13 +1,17 @@
 .navbar__inner {
   padding-top: 4px;
+  padding-right: 6px;
 }
+
 .navbar__logo {
   height: 36px;
-  margin-left: 0.5rem;
+  margin-left: 2rem;
 }
 
 .navbar__link {
-  margin-right: 14px;
+  padding: 0;
+  margin-top: 1px;
+  margin-right: 48px;
   line-height: 150%;
   color: var(--ifm-navbar-link-color);
   text-decoration: none;
@@ -43,7 +47,7 @@
   font-size: 14px;
   line-height: 150%;
   margin: 10px 0;
-  padding: 6px 40px 6px 16px;
+  padding: 6px 50px 6px 16px;
 }
 
 .menu__list .menu__list-item .menu__list .menu__list-item .active {
@@ -58,6 +62,36 @@
 
 .menu__link--sublist:after {
   background: url(/img/chevron-up.svg) center center no-repeat;
+  display: block;
+  position: relative;
   top: -2px;
-  right: 2px;
+  right: -38px;
+}
+aside {
+  background-color: #fff;
+}
+
+article {
+  padding: 2rem;
+}
+
+.table-of-contents {
+  padding-left: 28px;
+  padding-top: 58px;
+}
+
+.table-of-contents__link {
+  padding: 7px 18px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.table-of-contents__link--active {
+  border-left: solid 2px var(--ifm-navbar-link-hover-color);
+  padding-left: 16px;
+  border-radius: 0;
+  color: var(--ifm-navbar-link-hover-color);
 }
