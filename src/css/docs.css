@@ -1,3 +1,11 @@
+/* hide pagination and sharps */
+.pagination-nav {
+  display: none;
+}
+.hash-link {
+  display: none;
+}
+
 .navbar__inner {
   padding-top: 4px;
   padding-right: 6px;
