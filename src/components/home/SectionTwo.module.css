@@ -114,6 +114,12 @@
 }
 .card_contact {
   margin-bottom: 9px;
+  color: var(--ifm-navbar-link-color);
+  text-decoration: none;
+}
+.card_contact:hover {
+  color: var(--ifm-navbar-link-hover-color);
+  text-decoration: none;
 }
 .card_contact::before {
   position: relative;
