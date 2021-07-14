@@ -1,9 +1,20 @@
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 0;
 }
-
 .container section {
-  width: 50%;
+  position: relative;
+}
+.container section hr {
+  width: 120px;
+  border: none;
+  border-top: 4px dashed rgba(9, 30, 66, 0.12);
+  position: absolute;
+  right: calc((4px - 120px) / 2);
+  top: 164px;
+  transform: rotate(90deg);
+  margin: 0;
 }
 
 h3 {
@@ -34,7 +45,6 @@ section p {
 }
 
 .section__1 {
-  width: 500px;
   margin-top: 59px;
   border-right: 4px dashed rgba(9, 30, 66, 0.12);
   border-top: 4px dashed rgba(9, 30, 66, 0.12);
@@ -64,13 +74,15 @@ section p {
   box-sizing: border-box;
   width: 404px;
   border-radius: 12px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-around;
   align-items: center;
 }
 
 figure {
   margin: 0;
+  text-align: center;
 }
 
 figcaption {
@@ -78,19 +90,53 @@ figcaption {
   font-weight: normal;
   font-size: 12px;
   line-height: 150%;
-  text-align: center;
   color: rgba(9, 30, 66, 0.5);
 }
 
 .heading__1 {
-  width: 316px;
+  width: 19.75rem;
 }
 
 .section__2 {
   padding-left: 30px;
   margin-top: 155px;
   border-top: 4px dashed rgba(9, 30, 66, 0.12);
+  padding-bottom: 43px;
 }
 
-.heading__2 {
+.section__3 {
+  border-right: 4px dashed rgba(9, 30, 66, 0.12);
+  border-top: 4px dashed rgba(9, 30, 66, 0.12);
+}
+
+.heading__3 {
+  width: 18.2rem;
+}
+
+.section__4 {
+  padding-left: 30px;
+  margin-top: 121px;
+  border-top: 4px dashed rgba(9, 30, 66, 0.12);
+  /* border-left: 4px dashed rgba(9, 30, 66, 0.12); */
+  padding-bottom: 40px;
+}
+
+.section__5 {
+  margin-top: -105px;
+
+  border-top: 4px dashed rgba(9, 30, 66, 0.12);
+}
+
+.heading__5 {
+  width: 18rem;
+}
+
+.section__6 {
+  position: relative;
+  padding-left: 30px;
+  margin-top: 121px;
+  border-top: 4px dashed rgba(9, 30, 66, 0.12);
+}
+
+.heading__6 {
 }

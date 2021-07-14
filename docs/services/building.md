@@ -5,6 +5,7 @@ title: "Построение процессов CI/CD"
 
 import Hero from "../../src/components/docs/building/Hero"
 import Opportunities from "../../src/components/docs/building/Opportunities"
+import Workflow from "../../src/components/docs/building/Workflow"
 
 <Hero />
 
@@ -19,6 +20,8 @@ import Opportunities from "../../src/components/docs/building/Opportunities"
 <Opportunities />
 
 ## Как мы работаем
+
+<Workflow />
 
 Определение задачи и поиск решения
 Обсуждаем вашу задачу
