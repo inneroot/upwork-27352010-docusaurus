@@ -6,6 +6,7 @@ title: "Построение процессов CI/CD"
 import Hero from "../../src/components/docs/building/Hero"
 import Opportunities from "../../src/components/docs/building/Opportunities"
 import Workflow from "../../src/components/docs/building/Workflow"
+import Pricing from "../../src/components/docs/building/Pricing"
 
 <Hero />
 
@@ -26,7 +27,10 @@ import Workflow from "../../src/components/docs/building/Workflow"
 ## Стоимость
 
 В основном зависит от желаемого уровня автоматизации и особенностей вашего приложения, калькулятор ниже поможет получить примерную стоимость наших услуг.
+
 Окончательную стоимость мы сможем озвучить после обсуждения задачи и обследования вашей инфраструктуры
+
+<Pricing />
 
 По окончанию внедрения, мы так же можем взять на себя техническую поддержку конвейеров, инфраструктурных сервисов и прода. Для расчёта стоимости вашего проекта и любым другим вопросам, пожалуйста, свяжитесь с нами.».
 
