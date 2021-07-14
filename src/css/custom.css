@@ -33,13 +33,10 @@
   --ifm-toc-link-color: #091e42;
 }
 
-.nalozhenie {
-  /* background-image: url(/img/1920-.png); */
-}
 body {
   color: var(--text-color-primary);
   background-color: var(--global-background-color);
-  /* background-image: url(/img/1920-.png); */
+  /* background-image: url(/img/bgdoc.png); */
   position: relative;
 }
 
@@ -62,17 +59,6 @@ h2 {
   font-weight: bold;
   font-size: 2rem;
   line-height: 120%;
-}
-
-h3::before {
-  content: url(/img/sharp.svg);
-  padding-right: 0.6ch;
-}
-h3 {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1rem;
-  line-height: 150%;
 }
 
 .btn {
