@@ -33,6 +33,7 @@ export default function Workflow() {
     <a
       className={cardNumber === index ? styles.active__button : null}
       onClick={() => setCardNumber(index)}
+      key={index}
     >
       <span>{"0" + (index + 1)}</span>
       <label>{label}</label>
@@ -45,7 +46,7 @@ export default function Workflow() {
       <div className={styles.control__panel}>
         <div className={styles.dashed}></div>
         {buttons}
-        </div>
+      </div>
     </section>
   );
 }
