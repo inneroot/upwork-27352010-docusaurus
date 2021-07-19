@@ -1,0 +1,80 @@
+#business_card {
+  display: flex;
+  padding: 2.5rem 12rem 2.5rem 3.5rem;
+  border-radius: 20px;
+  justify-self: center;
+  width: 100%;
+  height: 136px;
+  overflow: hidden;
+  /* background: #f2f8ff; */
+  background-image: url(/img/business_card_bg.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  box-shadow: 0px 20px 40px rgba(9, 30, 66, 0.14);
+  border-radius: 20px;
+}
+#business_card_slogan {
+  flex: 1;
+}
+#business_card_logo {
+  height: 1.5rem;
+}
+
+#business_card p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+#business_card_contacts {
+  flex: 1;
+  display: grid;
+  width: 87%;
+  grid-template-columns: auto auto;
+}
+.card_contact {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  margin-bottom: 9px;
+  color: var(--ifm-navbar-link-color);
+  text-decoration: none;
+}
+.card_contact:hover {
+  color: var(--ifm-navbar-link-hover-color);
+  text-decoration: none;
+}
+.card_contact::before {
+  position: relative;
+  top: 5px;
+  margin-right: 1ch;
+}
+.card_email {
+  composes: card_contact;
+}
+.card_telegram {
+  composes: card_contact;
+}
+.card_phone {
+  composes: card_contact;
+}
+.card_whatsapp {
+  composes: card_contact;
+}
+.card_email::before {
+  content: url(/img/email.svg);
+}
+
+.card_telegram::before {
+  content: url(/img/telegram.svg);
+}
+
+.card_phone::before {
+  content: url(/img/phone.svg);
+}
+
+.card_whatsapp::before {
+  content: url(/img/whatsapp.svg);
+}

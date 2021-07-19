@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Pricing.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -8,16 +8,53 @@ function Tooltip({ info }) {
     <>
       <div className={styles.tooltip}>
         <img src={circle} className={styles.tooltip__element} />
-        <div className={styles.tooltip__info}>{info}</div>
+        <div className={`${styles.tooltip__info} ${styles.wide_tooltip}`}>
+          {info}
+        </div>
       </div>
     </>
+  );
+}
+
+function Digits({ def }) {
+  const minus = useBaseUrl(`/img/pricing/minus.svg`);
+  const plus = useBaseUrl(`/img/pricing/plus.svg`);
+
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    setCount(def ? parseInt(def) : 0);
+  }, []);
+  return (
+    <div className={styles.digits}>
+      <button onClick={() => setCount(count < 1 ? 0 : count - 1)}>
+        <img src={minus} />
+      </button>
+      <div className={styles.count}>{count}</div>
+      <button onClick={() => setCount(count >= 99 ? 99 : count + 1)}>
+        <img src={plus} />
+      </button>
+    </div>
+  );
+}
+
+function Checkbox() {
+  const checked = useBaseUrl(`/img/pricing/checked.svg`);
+  // const unchecked = useBaseUrl(`/img/pricing/unchecked.svg`);
+  const checkbox = useBaseUrl(`/img/pricing/checkbox.svg`);
+  const [isChecked, setIsChecked] = useState(false);
+  return (
+    <button
+      className={styles.checkbox_btn}
+      onClick={() => setIsChecked(!isChecked)}
+    >
+      <img src={isChecked ? checked : checkbox} />
+    </button>
   );
 }
 
 export default function Pricing() {
   const checked = useBaseUrl(`/img/pricing/checked.svg`);
   const unchecked = useBaseUrl(`/img/pricing/unchecked.svg`);
-  const checkbox = useBaseUrl(`/img/pricing/checkbox.svg`);
 
   const sm_prj = useBaseUrl(`/img/pricing/s.svg`);
   const md_prj = useBaseUrl(`/img/pricing/m.svg`);
@@ -88,28 +125,36 @@ export default function Pricing() {
           <div>2</div>
           <div>5</div>
           <div>15</div>
-          <div>5</div>
+          <div>
+            <Digits def="5" />
+          </div>
         </div>
         <div className={styles.row}>
           <div className={styles.cell_start}>PHP</div>
           <div>1</div>
           <div>5</div>
           <div>3</div>
-          <div>5</div>
+          <div>
+            <Digits def="5" />
+          </div>
         </div>
         <div className={styles.row_white}>
           <div className={styles.cell_start}>Java</div>
           <div>-</div>
           <div>-</div>
           <div>5</div>
-          <div>0</div>
+          <div>
+            <Digits />
+          </div>
         </div>
         <div className={styles.row}>
           <div className={styles.cell_start}>Python</div>
           <div>-</div>
           <div>-</div>
           <div>2</div>
-          <div>0</div>
+          <div>
+            <Digits />
+          </div>
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
@@ -147,7 +192,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -162,7 +207,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row}>
@@ -293,7 +338,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -308,7 +353,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row}>
@@ -338,7 +383,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row}>
@@ -353,7 +398,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -361,7 +406,9 @@ export default function Pricing() {
           <div>-</div>
           <div>2</div>
           <div>4</div>
-          <div>2</div>
+          <div>
+            <Digits def="2" />
+          </div>
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
@@ -386,7 +433,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row}>
@@ -403,7 +450,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row}>
@@ -475,7 +522,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row}>
@@ -493,7 +540,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -511,7 +558,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row}>
@@ -538,7 +585,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row}>
@@ -556,7 +603,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row}>
@@ -583,7 +630,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row}>
@@ -601,7 +648,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row}>
@@ -628,7 +675,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.row}>
@@ -646,7 +693,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checkbox} />
+            <Checkbox />
           </div>
         </div>
         <div className={styles.table__footer}>
@@ -675,9 +722,9 @@ export default function Pricing() {
       </section>
       <div className={styles.mark}>
         По окончанию внедрения, мы так же можем взять на себя техническую
-        поддержку конвейеров, инфраструктурных сервисов и прода.<br/> Для расчёта
-        стоимости вашего проекта и любым другим вопросам, пожалуйста, свяжитесь
-        с нами.
+        поддержку конвейеров, инфраструктурных сервисов и прода.
+        <br /> Для расчёта стоимости вашего проекта и любым другим вопросам,
+        пожалуйста, свяжитесь с нами.
       </div>
     </>
   );

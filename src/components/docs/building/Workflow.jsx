@@ -4,10 +4,10 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { CARDS, BUTTONS } from "./cards";
 
 function Card({ cardNumber }) {
-  const paragraphs = CARDS[cardNumber].paragraphs.map((line) => {
+  const paragraphs = CARDS[cardNumber].paragraphs.map((line, index) => {
     const imgsrc = useBaseUrl(`/img/workflow/${line.img}.svg`);
     return (
-      <div className={styles.line}>
+      <div className={styles.line} key={index}>
         <img src={imgsrc} />
         <p>{line.text}</p>
       </div>

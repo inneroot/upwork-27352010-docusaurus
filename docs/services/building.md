@@ -7,6 +7,7 @@ import Hero from "../../src/components/docs/building/Hero"
 import Opportunities from "../../src/components/docs/building/Opportunities"
 import Workflow from "../../src/components/docs/building/Workflow"
 import Pricing from "../../src/components/docs/building/Pricing"
+import Contacts from "../../src/components/docs/building/Contacts"
 
 <Hero />
 
@@ -34,4 +35,4 @@ import Pricing from "../../src/components/docs/building/Pricing"
 
 ## Контакты
 
-Профессиональные практики DevOps
+<Contacts />
