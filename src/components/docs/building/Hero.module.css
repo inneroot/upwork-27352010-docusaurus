@@ -22,14 +22,16 @@
 
 .section > ul {
   margin-top: 20px;
-  list-style-image: url(/img/sharp.svg);
-  list-style-position: inside;
+  list-style: none;
 }
 
-.list {
-  margin-top: 20px;
-  list-style-image: url(/img/sharp.svg);
-  list-style-position: inside;
+.list > li::before {
+  content: url(/img/sharp.svg);
+  margin-right: 6px;
+}
+
+.list > li:last-child {
+  margin-top: -1px;
 }
 
 .section > ul > li {
