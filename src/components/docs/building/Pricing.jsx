@@ -158,7 +158,36 @@ export default function Pricing() {
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
-            <strong>Виды окружений</strong> <Tooltip info="Виды окружений" />
+            <strong>Виды окружений</strong>{" "}
+            <Tooltip
+              info={
+                <div>
+                  Укажите нужные Вам окружения.
+                  <br />
+                  На старте создания приложения может быть достаточно только
+                  окружения разработки, для большого проекта окружений может
+                  быть более 10-тка.
+                  <br />
+                  Именование окружений:
+                  <br />
+                  Prod — окружение рабочего развёртывания с которым
+                  непосредственно взаимодействуют пользователи.
+                  <br />
+                  Dev — окружение разработки.
+                  <br />
+                  Stage — окружение промежуточного развёртывания между Dev и
+                  Prod. Обычно является зеркалом Prod`а, но без пользовательской
+                  нагрузки и используется для предварительного просмотра новых
+                  функций и нагрузочного тестирования.
+                  <br />
+                  Test/QA — тестовое окружение для автоматических и ручных
+                  проверок.
+                  <br />
+                  Integration — Основа для построения CI или для тестирования
+                  сайд-эффектов разработчиком
+                </div>
+              }
+            />
           </div>
           <div />
           <div />
@@ -242,7 +271,34 @@ export default function Pricing() {
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
-            <strong>Инфраструктура</strong> <Tooltip info="Инфраструктура" />
+            <strong>Инфраструктура</strong>{" "}
+            <Tooltip
+              info={
+                <div>
+                  Укажите сторонние сервисы, которые используется в Вашем
+                  приложении.
+                  <br />
+                  В калькуляторе для расчета используются трудозатраты
+                  построения сервисов в неотказоустойчивом (некластерном)
+                  варианте развёртывания. Расчет высокодоступных и
+                  отказоустойчивых вариантов производится индивидуально под
+                  конкретные требования:
+                  <br />
+                  <ul>
+                    <li>
+                      размер домена отказа: ВМ, хост, стойка, машзал, ЦОД,
+                      провайдер;
+                    </li>
+                    <li>
+                      RTO и RPO (допустимое время простоя сервиса в случае сбоя
+                      и допустимый объем возможных потерь данных в случае сбоя
+                      соответственно);
+                    </li>
+                    <li>требуемая производительность сервиса.</li>
+                  </ul>
+                </div>
+              }
+            />
           </div>
           <div />
           <div />
@@ -421,7 +477,8 @@ export default function Pricing() {
         </div>
         <div className={styles.row_white}>
           <div className={styles.cell_start}>
-            Единообразный код <Tooltip info="Единообразный код" />
+            Единообразный код
+            <Tooltip info="Подберем и внедрим линтеры для анализа стилистики и соответствия кода лучшим практикам." />
           </div>
           <div>
             <img src={unchecked} />
@@ -438,7 +495,8 @@ export default function Pricing() {
         </div>
         <div className={styles.row}>
           <div className={styles.cell_start}>
-            Чистый код <Tooltip info="Чистый код" />
+            Чистый код
+            <Tooltip info="Внедрим инструменты сканирования кода на наличие чувствительных данных." />
           </div>
           <div>
             <img src={unchecked} />
@@ -464,8 +522,8 @@ export default function Pricing() {
         </div>
         <div className={styles.row_white}>
           <div className={styles.cell_start}>
-            Эффективный процесс сборки{" "}
-            <Tooltip info="Эффективный процесс сборки" />
+            Эффективный процесс сборки
+            <Tooltip info="Автоматизируем создания окружений сборки. Снижаем размер артефактов. Распараллеливаем процесс сборки. " />
           </div>
           <div>
             <img src={checked} />
@@ -482,8 +540,8 @@ export default function Pricing() {
         </div>
         <div className={styles.row}>
           <div className={styles.cell_start}>
-            Унифицированные окружения{" "}
-            <Tooltip info="Унифицированные окружения" />
+            Унифицированные окружения
+            <Tooltip info="Стандартизируем управление окружениями с помощью систем хранения секретов и хранилищ артефактов (s3, registry и т.д.)" />
           </div>
           <div>
             <img src={checked} />
@@ -510,7 +568,25 @@ export default function Pricing() {
         <div className={styles.row_white}>
           <div className={styles.cell_start}>
             Тестирование качества и безопасности кода
-            <Tooltip info="Тестирование качества и безопасности кода" />
+            <Tooltip
+              info={
+                <div>
+                  Внедряем систему контроля качества и безопасности кода
+                  SonarQube, PVS-Studio.
+                  <br />В калькуляторе для расчета используются трудозатраты
+                  внедрения SonarQube CommunityEdition с параметрами «по
+                  умолчанию» и настройки базовых проверок:
+                  <ul>
+                    <li>кода на баги и уязвимости;</li>
+                    <li>ошибки в конструкциях кода (code smells);</li>
+                    <li>покрытие кода тестами;</li>
+                    <li>дублировании кода.</li>
+                  </ul>
+                  Расчет стоимости внедрения расширенной версии SonarQube
+                  производится индивидуально под конкретные требования.
+                </div>
+              }
+            />
           </div>
           <div>
             <img src={unchecked} />
@@ -528,7 +604,7 @@ export default function Pricing() {
         <div className={styles.row}>
           <div className={styles.cell_start}>
             Нагрузочное тестирование
-            <Tooltip info="Нагрузочное тестирование" />
+            <Tooltip info="Дополняем конвейеры нагрузочным тестированием используя JMeter, Яндекс.Танк" />
           </div>
           <div>
             <img src={unchecked} />
@@ -546,7 +622,7 @@ export default function Pricing() {
         <div className={styles.row_white}>
           <div className={styles.cell_start}>
             Функциональное тестирование
-            <Tooltip info="Функциональное тестирование" />
+            <Tooltip info="Дополняем конвейеры функциональным тестированием используя Selenium." />
           </div>
           <div>
             <img src={unchecked} />
@@ -573,7 +649,7 @@ export default function Pricing() {
         <div className={styles.row_white}>
           <div className={styles.cell_start}>
             Эффективный процесс развёртывания
-            <Tooltip info="Эффективный процесс развёртывания" />
+            <Tooltip info="Автоматизируем развёртывание приложения в окружения используя Terraform, Ansible." />
           </div>
           <div>
             <img src={checked} />
@@ -591,7 +667,17 @@ export default function Pricing() {
         <div className={styles.row}>
           <div className={styles.cell_start}>
             Минимальное влияние на пользователей
-            <Tooltip info="Минимальное влияние на пользователей" />
+            <Tooltip
+              info={
+                <div>
+                  Подбираем стратегию выкатки (canary, blue-green) для вашего
+                  приложения.
+                  <br />
+                  Подготавливаем автоматические сценарии отката изменений
+                  (rollback).
+                </div>
+              }
+            />
           </div>
           <div>
             <img src={unchecked} />
@@ -618,7 +704,7 @@ export default function Pricing() {
         <div className={styles.row_white}>
           <div className={styles.cell_start}>
             Производительная инфраструктура
-            <Tooltip info="Производительная инфраструктура" />
+            <Tooltip info="Анализируем узкие места в производительности вашей инфраструктуры и избавляемся от них. " />
           </div>
           <div>
             <img src={unchecked} />
@@ -636,7 +722,7 @@ export default function Pricing() {
         <div className={styles.row}>
           <div className={styles.cell_start}>
             Минимум простоя в случае отказа компонентов прода
-            <Tooltip info="Минимум простоя в случае отказа компонентов прода" />
+            <Tooltip info="Внедряем процесс регулярного тестирования прода (Chaos Monkey)." />
           </div>
           <div>
             <img src={unchecked} />
@@ -663,7 +749,7 @@ export default function Pricing() {
         <div className={styles.row_white}>
           <div className={styles.cell_start}>
             Быстрая диагностика
-            <Tooltip info="Быстрая диагностика" />
+            <Tooltip info="Внедряем мониторинг, алертинг и логирование для всех компонентов прода" />
           </div>
           <div>
             <img src={unchecked} />
@@ -681,7 +767,7 @@ export default function Pricing() {
         <div className={styles.row}>
           <div className={styles.cell_start}>
             Контролируемый уровень сервиса
-            <Tooltip info="Контролируемый уровень сервиса" />
+            <Tooltip info="Помогаем определить SLI и SLO для вашего сервиса" />
           </div>
           <div>
             <img src={unchecked} />
