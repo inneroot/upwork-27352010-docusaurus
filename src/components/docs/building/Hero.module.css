@@ -22,7 +22,9 @@
 
 .section > ul {
   margin-top: 20px;
-  list-style: square inside url(/img/sharp.svg);
+  list-style-type: square;
+  list-style-image: url(/img/sharp.svg);
+  list-style-position: inside;
 }
 
 .section > ul > li {
