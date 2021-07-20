@@ -19,12 +19,13 @@
   font-size: 24px;
   line-height: 150%;
 }
-.section ul {
+
+.section > ul {
   margin-top: 20px;
   list-style: square inside url(/img/sharp.svg);
 }
 
-.section ul li {
+.section > ul > li {
   margin: 16px 26px;
   font-style: normal;
   font-weight: 500;
@@ -32,7 +33,7 @@
   line-height: 150%;
 }
 
-.section ul li span {
+.section > ul > li > span {
   line-height: 20px;
   margin-left: 20px;
   font-style: normal;
