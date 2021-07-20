@@ -68,8 +68,6 @@ section p {
 .heading {
   background-color: #f2f8ff;
   margin-top: -45px;
-  display: flex;
-  align-items: center;
 }
 
 .technologies {
@@ -100,8 +98,12 @@ figcaption {
 
 .heading__1 {
   display: inline-flex;
+  align-items: center;
 }
-
+.heading__2 {
+  display: flex;
+  align-items: center;
+}
 .section__2 {
   padding-left: 30px;
   margin-top: 155px;
@@ -120,6 +122,12 @@ figcaption {
 
 .heading__3 {
   display: inline-flex;
+  align-items: center;
+}
+
+.heading__4 {
+  display: flex;
+  align-items: center;
 }
 
 .section__4 {
@@ -141,6 +149,12 @@ figcaption {
 
 .heading__5 {
   display: inline-flex;
+  align-items: center;
+}
+
+.heading__6 {
+  display: flex;
+  align-items: center;
 }
 
 .section__6 {
@@ -148,7 +162,4 @@ figcaption {
   padding-left: 30px;
   margin-top: 121px;
   border-top: 4px dashed rgba(9, 30, 66, 0.12);
-}
-
-.heading__6 {
 }
