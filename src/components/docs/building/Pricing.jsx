@@ -1,6 +1,61 @@
 import React, { useState, useEffect } from "react";
+import {
+  createEvent,
+  createStore,
+  createEffect,
+  combine,
+  createApi,
+} from "effector-logger";
+import { useStore } from "effector-react";
 import styles from "./Pricing.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { calculateCost } from "./calc";
+
+const mathMap = new Map();
+
+const _QTY_APPS_GO = createStore(5); //form Golang
+const _QTY_APPS_PHP = createStore(5); //form PHP
+const _QTY_APPS_JAVA = createStore(0); //form JAVA
+const _QTY_APPS_PY = createStore(0); //form Python
+
+//Виды окружений
+const _Dev = true;
+const _Integration = createStore(false);
+const _TestQA = createStore(false);
+const _StageDemo = createStore(true);
+const _Prod = createStore(true);
+
+//Инфраструктура
+const _SUBD = createStore(true);
+const _RabbitKafka = createStore(true);
+const _Redis = createStore(true);
+const _Nginx = createStore(true);
+const _Terraform = createStore(true);
+const _Vault = createStore(false);
+const _MinIO = createStore(false);
+const _Docker = createStore(true);
+const _Elastic = createStore(true);
+const _Prometheus = createStore(true);
+const _OtherServices = createStore(2);
+
+const _uniformCode = createStore(false);
+const _cleanCode = createStore(false);
+
+const _buildProcess = true;
+const _unifiedEnvs = createStore(true);
+
+const _testingCode = createStore(true);
+const _stressTesting = createStore(false);
+const _functionalTesting = createStore(false);
+
+const _deploymentProcess = true;
+const _hurtless = createStore(true);
+
+const _infrastr = createStore(false);
+const _minDowntime = createStore(false);
+
+const _fastDiagnostics = createStore(false);
+const _controlledLevel = createStore(false);
 
 function Tooltip({ info }) {
   const circle = useBaseUrl(`/img/pricing/info-circle.svg`);
@@ -15,38 +70,55 @@ function Tooltip({ info }) {
     </>
   );
 }
-
-function Digits({ def }) {
+function DigitsEff({ store }) {
   const minus = useBaseUrl(`/img/pricing/minus.svg`);
   const plus = useBaseUrl(`/img/pricing/plus.svg`);
+  const count = useStore(store);
 
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    setCount(def ? parseInt(def) : 0);
-  }, []);
+  const { increment, decrement } = createApi(store, {
+    increment: (state) => (state >= 99 ? 99 : state + 1),
+    decrement: (state) => (state < 1 ? 0 : state - 1),
+  });
+
   return (
     <div className={styles.digits}>
-      <button onClick={() => setCount(count < 1 ? 0 : count - 1)}>
+      <button onClick={decrement}>
         <img src={minus} />
       </button>
       <div className={styles.count}>{count}</div>
-      <button onClick={() => setCount(count >= 99 ? 99 : count + 1)}>
+      <button onClick={increment}>
         <img src={plus} />
       </button>
     </div>
   );
 }
 
-function Checkbox() {
+function Checkbox({ def = false }) {
   const checked = useBaseUrl(`/img/pricing/checked.svg`);
   // const unchecked = useBaseUrl(`/img/pricing/unchecked.svg`);
   const checkbox = useBaseUrl(`/img/pricing/checkbox.svg`);
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(def);
   return (
     <button
       className={styles.checkbox_btn}
       onClick={() => setIsChecked(!isChecked)}
     >
+      <img src={isChecked ? checked : checkbox} />
+    </button>
+  );
+}
+function CheckboxEff({ store }) {
+  const checked = useBaseUrl(`/img/pricing/checked.svg`);
+  // const unchecked = useBaseUrl(`/img/pricing/unchecked.svg`);
+  const checkbox = useBaseUrl(`/img/pricing/checkbox.svg`);
+  // const [isChecked, setIsChecked] = useState(def);
+  const isChecked = useStore(store);
+
+  const { toggle } = createApi(store, {
+    toggle: (state) => !state,
+  });
+  return (
+    <button className={styles.checkbox_btn} onClick={toggle}>
       <img src={isChecked ? checked : checkbox} />
     </button>
   );
@@ -60,6 +132,47 @@ export default function Pricing() {
   const md_prj = useBaseUrl(`/img/pricing/m.svg`);
   const lg_prj = useBaseUrl(`/img/pricing/l.svg`);
   const calc_prj = useBaseUrl(`/img/pricing/calc.svg`);
+
+  const allData = {
+    _QTY_APPS_GO: useStore(_QTY_APPS_GO),
+    _QTY_APPS_PHP: useStore(_QTY_APPS_PHP),
+    _QTY_APPS_JAVA: useStore(_QTY_APPS_JAVA),
+    _QTY_APPS_PY: useStore(_QTY_APPS_PY),
+    _Dev: true,
+    _Integration: useStore(_Integration),
+    _TestQA: useStore(_TestQA),
+    _StageDemo: useStore(_StageDemo),
+    _Prod: useStore(_Prod),
+    _SUBD: useStore(_SUBD),
+    _RabbitKafka: useStore(_RabbitKafka),
+    _Redis: useStore(_Redis),
+    _Nginx: useStore(_Nginx),
+    _Terraform: useStore(_Terraform),
+    _Vault: useStore(_Vault),
+    _MinIO: useStore(_MinIO),
+    _Docker: useStore(_Docker),
+    _Elastic: useStore(_Elastic),
+    _Prometheus: useStore(_Prometheus),
+    _OtherServices: useStore(_OtherServices),
+    _uniformCode: useStore(_uniformCode),
+    _cleanCode: useStore(_cleanCode),
+
+    _buildProcess: true,
+    _unifiedEnvs: useStore(_unifiedEnvs),
+
+    _testingCode: useStore(_testingCode),
+    _stressTesting: useStore(_stressTesting),
+    _functionalTesting: useStore(_functionalTesting),
+
+    _deploymentProcess: true,
+    _hurtless: useStore(_hurtless),
+
+    _infrastr: useStore(_infrastr),
+    _minDowntime: useStore(_minDowntime),
+
+    _fastDiagnostics: useStore(_fastDiagnostics),
+    _controlledLevel: useStore(_controlledLevel),
+  };
 
   return (
     <>
@@ -126,7 +239,7 @@ export default function Pricing() {
           <div>5</div>
           <div>15</div>
           <div>
-            <Digits def="5" />
+            <DigitsEff store={_QTY_APPS_GO} />
           </div>
         </div>
         <div className={styles.row}>
@@ -135,7 +248,7 @@ export default function Pricing() {
           <div>5</div>
           <div>3</div>
           <div>
-            <Digits def="5" />
+            <DigitsEff store={_QTY_APPS_PHP} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -144,7 +257,7 @@ export default function Pricing() {
           <div>-</div>
           <div>5</div>
           <div>
-            <Digits />
+            <DigitsEff store={_QTY_APPS_JAVA} />
           </div>
         </div>
         <div className={styles.row}>
@@ -153,7 +266,7 @@ export default function Pricing() {
           <div>-</div>
           <div>2</div>
           <div>
-            <Digits />
+            <DigitsEff store={_QTY_APPS_PY} />
           </div>
         </div>
         <div className={styles.row}>
@@ -221,7 +334,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_Integration} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -236,7 +349,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_TestQA} />
           </div>
         </div>
         <div className={styles.row}>
@@ -251,7 +364,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checked} />
+            <CheckboxEff store={_StageDemo} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -266,7 +379,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checked} />
+            <CheckboxEff store={_Prod} />
           </div>
         </div>
         <div className={styles.row}>
@@ -317,7 +430,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checked} />
+            <CheckboxEff store={_SUBD} />
           </div>
         </div>
         <div className={styles.row}>
@@ -332,7 +445,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checked} />
+            <CheckboxEff store={_RabbitKafka} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -347,7 +460,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checked} />
+            <CheckboxEff store={_Redis} />
           </div>
         </div>
         <div className={styles.row}>
@@ -362,7 +475,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checked} />
+            <CheckboxEff store={_Nginx} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -379,7 +492,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checked} />
+            <CheckboxEff store={_Terraform} />
           </div>
         </div>
         <div className={styles.row}>
@@ -394,7 +507,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_Vault} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -409,7 +522,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_MinIO} />
           </div>
         </div>
         <div className={styles.row}>
@@ -424,7 +537,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checked} />
+            <CheckboxEff store={_Docker} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -439,7 +552,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_Elastic} />
           </div>
         </div>
         <div className={styles.row}>
@@ -454,7 +567,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_Prometheus} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -463,7 +576,7 @@ export default function Pricing() {
           <div>2</div>
           <div>4</div>
           <div>
-            <Digits def="2" />
+            <DigitsEff store={_OtherServices} />
           </div>
         </div>
         <div className={styles.row}>
@@ -490,7 +603,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_uniformCode} />
           </div>
         </div>
         <div className={styles.row}>
@@ -508,7 +621,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_cleanCode} />
           </div>
         </div>
         <div className={styles.row}>
@@ -553,7 +666,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <img src={checked} />
+            <CheckboxEff store={_unifiedEnvs} />
           </div>
         </div>
         <div className={styles.row}>
@@ -598,7 +711,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_testingCode} />
           </div>
         </div>
         <div className={styles.row}>
@@ -616,7 +729,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_stressTesting} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -634,7 +747,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_functionalTesting} />
           </div>
         </div>
         <div className={styles.row}>
@@ -661,7 +774,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <img src={checked} />
           </div>
         </div>
         <div className={styles.row}>
@@ -689,7 +802,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_hurtless} />
           </div>
         </div>
         <div className={styles.row}>
@@ -716,7 +829,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_infrastr} />
           </div>
         </div>
         <div className={styles.row}>
@@ -734,7 +847,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_minDowntime} />
           </div>
         </div>
         <div className={styles.row}>
@@ -761,7 +874,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_fastDiagnostics} />
           </div>
         </div>
         <div className={styles.row}>
@@ -779,7 +892,7 @@ export default function Pricing() {
             <img src={checked} />
           </div>
           <div>
-            <Checkbox />
+            <CheckboxEff store={_controlledLevel} />
           </div>
         </div>
         <div className={styles.table__footer}>
@@ -800,7 +913,7 @@ export default function Pricing() {
             примерная стоимость
           </div>
           <div>
-            <span>604 240 ₽</span>
+            <span>{calculateCost(allData)} ₽ </span>
             <br />
             примерная стоимость
           </div>

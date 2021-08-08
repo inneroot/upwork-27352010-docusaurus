@@ -7,7 +7,7 @@ export default function Hero() {
       <h1>Построение процессов CI/CD</h1>
       <p>Автоматизируем {"{"}</p>
       <ul className={styles.list}>
-        <li>разарботку</li>
+        <li>разработку</li>
         <li>запуск</li>
         <li>
           эксплуатацию <span>{"}"}</span>
