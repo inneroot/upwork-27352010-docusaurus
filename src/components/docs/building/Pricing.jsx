@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, } from "react";
 import {
-  createEvent,
   createStore,
-  createEffect,
-  combine,
   createApi,
-} from "effector-logger";
+} from "effector";
 import { useStore } from "effector-react";
 import styles from "./Pricing.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";

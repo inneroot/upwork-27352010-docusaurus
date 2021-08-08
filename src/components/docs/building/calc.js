@@ -2,45 +2,6 @@ const HOUR_RATE = 2800;
 const BASE_VALUE = [, 8, 8, 10, 2, 1, 1, 1, , 1, 1, 1, 1];
 
 export function calculateCost(data) {
-  //Кол-во модулей приложения на языках
-  // let data._QTY_APPS_GO = 8;
-  // let data._QTY_APPS_PHP = 5;
-  // let data._QTY_APPS_JAVA = 1;
-  // let data._QTY_APPS_PY = 1;
-
-  // //Виды окружений
-  // const data._Dev = true;
-  // let data._Integration = true;
-  // let data._TestQA = true;
-  // let data._StageDemo = true;
-  // let data._Prod = true;
-
-  // //Инфраструктура
-  // let data._SUBD = true;
-  // let data._RabbitKafka = true;
-  // let data._Redis = true;
-  // let data._Nginx = true;
-  // let data._Terraform = true;
-  // let data._Vault = true;
-  // let data._MinIO = true;
-  // let data._Docker = true;
-  // let data._Elastic = true;
-  // let data._Prometheus = true;
-  // let data._OtherServices = 2;
-
-  // let data._uniformCode = true;
-  // let data._cleanCode = true;
-  // const data._buildProcess = true;
-  // let data._unifiedEnvs = true;
-  // let data._testingCode = true;
-  // let data._stressTesting = true;
-  // let data._functionalTesting = true;
-  // const data._deploymentProcess = true;
-  // let data._hurtless = true;
-  // let data._infrastr = true;
-  // let data._minDowntime = true;
-  // let data._fastDiagnostics = true;
-  // let data._controlledLevel = true;
 
   let buildGolang = data._QTY_APPS_GO * 1.1 * 1.1 * 1;
   let buildPHP = data._QTY_APPS_PHP * 1.5 * 1.2 * 1.1;
@@ -193,22 +154,5 @@ export function calculateCost(data) {
   //result
   const result = HOUR_RATE * totalHours;
 
-  console.table(data);
-  console.table([
-    uniformCodeCost,
-    cleanCodeCost,
-    buildProcessCost,
-    unifiedEnvsCost,
-    testingCodeCost,
-    stressTestingCost,
-    functionalTestingCost,
-    deploymentProcessCost,
-    hurtlessCost,
-    infrastrCost,
-    minDowntimeConst,
-    fastDiagnosticsCost,
-    controlledLevelCost,
-    totalHours,
-  ]);
   return Math.floor(result);
 }
