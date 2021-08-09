@@ -892,17 +892,17 @@ export default function Pricing() {
         <div className={styles.table__footer}>
           <div></div>
           <div>
-            <span>195 440 ₽</span>
+            <span>195 500 ₽</span>
             <br />
             примерная стоимость
           </div>
           <div>
-            <span>604 240 ₽</span>
+            <span>604 000 ₽</span>
             <br />
             примерная стоимость
           </div>
           <div>
-            <span>1 955 296 ₽</span>
+            <span>1 955 000 ₽</span>
             <br />
             примерная стоимость
           </div>
