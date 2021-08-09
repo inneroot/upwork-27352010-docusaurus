@@ -1,8 +1,5 @@
-import React, { useState, } from "react";
-import {
-  createStore,
-  createApi,
-} from "effector";
+import React, { useState } from "react";
+import { createStore, createApi } from "effector";
 import { useStore } from "effector-react";
 import styles from "./Pricing.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -910,7 +907,7 @@ export default function Pricing() {
             примерная стоимость
           </div>
           <div>
-            <span>{calculateCost(allData)} ₽ </span>
+            <span>{calculateCost(allData).toLocaleString("ru-RU")} ₽ </span>
             <br />
             примерная стоимость
           </div>

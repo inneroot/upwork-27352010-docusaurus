@@ -154,5 +154,7 @@ export function calculateCost(data) {
   //result
   const result = HOUR_RATE * totalHours;
 
-  return Math.floor(result);
+  const roundedTo500 = Math.round(result/500)*500;
+  
+  return roundedTo500
 }
