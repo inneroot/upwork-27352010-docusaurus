@@ -5,20 +5,19 @@ import styles from "./Pricing.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { calculateCost } from "./calc";
 
-const mathMap = new Map();
+//Инициализация всех переключателей с их значениями по умолчанию
 
-const _QTY_APPS_GO = createStore(5); //form Golang
-const _QTY_APPS_PHP = createStore(5); //form PHP
-const _QTY_APPS_JAVA = createStore(0); //form JAVA
-const _QTY_APPS_PY = createStore(0); //form Python
-
+//Кол-во модулей приложения на языках
+const _QTY_APPS_GO = createStore(5);
+const _QTY_APPS_PHP = createStore(5);
+const _QTY_APPS_JAVA = createStore(0);
+const _QTY_APPS_PY = createStore(0);
 //Виды окружений
 const _Dev = true;
 const _Integration = createStore(false);
 const _TestQA = createStore(false);
 const _StageDemo = createStore(true);
 const _Prod = createStore(true);
-
 //Инфраструктура
 const _SUBD = createStore(true);
 const _RabbitKafka = createStore(true);
@@ -31,23 +30,23 @@ const _Docker = createStore(true);
 const _Elastic = createStore(true);
 const _Prometheus = createStore(true);
 const _OtherServices = createStore(2);
-
+//Наводим порядок в системе разработки
 const _uniformCode = createStore(false);
 const _cleanCode = createStore(false);
-
+//Повышаем стабильность и скорость сборки
 const _buildProcess = true;
 const _unifiedEnvs = createStore(true);
-
+//Тестируем приложение
 const _testingCode = createStore(true);
 const _stressTesting = createStore(false);
 const _functionalTesting = createStore(false);
-
+//Обеспечиваем контролируемое развёртывание
 const _deploymentProcess = true;
 const _hurtless = createStore(true);
-
+//Выявляем и решаем проблемы прода
 const _infrastr = createStore(false);
 const _minDowntime = createStore(false);
-
+//Показываем целостную картину
 const _fastDiagnostics = createStore(false);
 const _controlledLevel = createStore(false);
 
@@ -103,9 +102,7 @@ function Checkbox({ def = false }) {
 }
 function CheckboxEff({ store }) {
   const checked = useBaseUrl(`/img/pricing/checked.svg`);
-  // const unchecked = useBaseUrl(`/img/pricing/unchecked.svg`);
   const checkbox = useBaseUrl(`/img/pricing/checkbox.svg`);
-  // const [isChecked, setIsChecked] = useState(def);
   const isChecked = useStore(store);
 
   const { toggle } = createApi(store, {
@@ -132,7 +129,7 @@ export default function Pricing() {
     _QTY_APPS_PHP: useStore(_QTY_APPS_PHP),
     _QTY_APPS_JAVA: useStore(_QTY_APPS_JAVA),
     _QTY_APPS_PY: useStore(_QTY_APPS_PY),
-    _Dev: true,
+    _Dev: _Dev,
     _Integration: useStore(_Integration),
     _TestQA: useStore(_TestQA),
     _StageDemo: useStore(_StageDemo),
@@ -151,14 +148,14 @@ export default function Pricing() {
     _uniformCode: useStore(_uniformCode),
     _cleanCode: useStore(_cleanCode),
 
-    _buildProcess: true,
+    _buildProcess: _buildProcess,
     _unifiedEnvs: useStore(_unifiedEnvs),
 
     _testingCode: useStore(_testingCode),
     _stressTesting: useStore(_stressTesting),
     _functionalTesting: useStore(_functionalTesting),
 
-    _deploymentProcess: true,
+    _deploymentProcess: _deploymentProcess,
     _hurtless: useStore(_hurtless),
 
     _infrastr: useStore(_infrastr),
@@ -892,12 +889,12 @@ export default function Pricing() {
         <div className={styles.table__footer}>
           <div></div>
           <div>
-            <span>195 000 ₽</span>
+            <span>182 000 ₽</span>
             <br />
             примерная стоимость
           </div>
           <div>
-            <span>604 000 ₽</span>
+            <span>591 000 ₽</span>
             <br />
             примерная стоимость
           </div>

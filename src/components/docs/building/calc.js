@@ -8,11 +8,14 @@ export function calculateCost(data) {
   let buildPython = data._QTY_APPS_PY * 1.7 * 1.3 * 1.1;
 
   //Единообразный код
-  let uniformCodeCost = data._uniformCode * BASE_VALUE[1] * 4.8; //!NOTE не учитывает какие реально есть языки
-  // (!!data._QTY_APPS_GO * 1 + //должно быть так
-  //   !!data._QTY_APPS_PHP * 1.3 +
-  //   !!data._QTY_APPS_JAVA * 1.2 +
-  //   !!data._QTY_APPS_PY * 1.3);
+  let uniformCodeCost =
+    data._uniformCode *
+    BASE_VALUE[1] *
+    (!!data._QTY_APPS_GO * 1 +
+      !!data._QTY_APPS_PHP * 1.3 +
+      !!data._QTY_APPS_JAVA * 1.2 +
+      !!data._QTY_APPS_PY * 1.3);
+
   //Чистый код
   let cleanCodeCost = data._cleanCode * BASE_VALUE[2] * 1.2;
 
@@ -21,9 +24,10 @@ export function calculateCost(data) {
   let buildProcessCost = data._buildProcess * BASE_VALUE[3] * buildSum;
 
   //Унифицированные окружения
-  let unifiedEnvsCost = data._unifiedEnvs * BASE_VALUE[4] * 3.4; //!NOTE не учитывает что чего-то может не быть
-
-  // (!!data._Vault * 1.1 + !!data._Docker * 1.1 + !!data._MinIO * 1.2); // должно быть так
+  let unifiedEnvsCost =
+    data._unifiedEnvs *
+    BASE_VALUE[4] *
+    (!!data._Vault * 1.1 + !!data._Docker * 1.1 + !!data._MinIO * 1.2);
   //+ !!_Cuber // не используется в формуле
 
   //Тестирование качества и безопасности кода
