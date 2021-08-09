@@ -2,7 +2,6 @@ const HOUR_RATE = 2800;
 const BASE_VALUE = [, 8, 8, 10, 2, 1, 1, 1, , 1, 1, 1, 1];
 
 export function calculateCost(data) {
-
   let buildGolang = data._QTY_APPS_GO * 1.1 * 1.1 * 1;
   let buildPHP = data._QTY_APPS_PHP * 1.5 * 1.2 * 1.1;
   let buildJAVA = data._QTY_APPS_JAVA * 1.3 * 1.2 * 1;
@@ -154,7 +153,7 @@ export function calculateCost(data) {
   //result
   const result = HOUR_RATE * totalHours;
 
-  const roundedTo500 = Math.round(result/500)*500;
-  
-  return roundedTo500
+  const roundedTo500 = Math.floor(result / 1000) * 1000;
+
+  return roundedTo500;
 }
