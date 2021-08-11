@@ -29,3 +29,30 @@
   margin-top: 4px;
   margin-left: 2rem;
 }
+
+/* mobile_navigation */
+
+.mobile_navigation {
+  padding: 24px 0;
+  padding-right: 24px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.hamburger_button {
+  background-color: transparent;
+  border: none;
+}
+
+@media only screen and (max-width: 750px) {
+  .navigation {
+    display: none;
+  }
+  .mobile_navigation {
+    display: flex;
+  }
+  .logo img {
+    height: 24px;
+  }
+}

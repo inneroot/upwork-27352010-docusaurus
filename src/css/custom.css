@@ -36,7 +36,8 @@
 body {
   color: var(--text-color-primary);
   background-color: var(--global-background-color);
-  /* background-image: url(/img/bgdoc.png); */
+  background-image: url(/img/mobile-main-320-y.png);
+  background-size: 320px;
   position: relative;
 }
 

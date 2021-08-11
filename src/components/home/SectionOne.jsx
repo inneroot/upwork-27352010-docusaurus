@@ -5,17 +5,21 @@ import styles from "./SectionOne.module.css";
 
 export default function SectionOne() {
   const illustration = useBaseUrl("/img/illustration.svg");
+  const illustration_mobile = useBaseUrl("/img/illustration-mobile.svg");
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
         <div id={styles.text}>
           <h1 id={styles.h1}>
-            Профессиональные практики <span>DevOps</span>
+            Профессиональные
+            <br />
+            практики <span>DevOps</span>
           </h1>
           <p className={styles.hero__text}>
             Мы строим инфраструктуру
             <br /> и автоматизируем разработку
           </p>
+          <img id={styles.m__image} src={illustration_mobile} />
           <div className={styles.hero__btns}>
             <Link to="#" className="btn btn_primary">
               Презентация
