@@ -36,7 +36,7 @@
   font-family: Montserrat;
   font-style: normal;
   padding: 0;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   padding-left: 0;
   padding-right: 40px;
@@ -52,7 +52,7 @@
 .menu__list-item .menu__list .menu__list-item a {
   margin-left: 0px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 150%;
   margin: 10px 0;
   padding: 6px 50px 6px 16px;
@@ -96,7 +96,7 @@ article {
 .markdown > p {
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
   margin: 24px 0;
   max-width: 86ch;
@@ -113,7 +113,7 @@ article {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 150%;
 }
 
@@ -135,7 +135,7 @@ article {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 100%;
   color: var(--ifm-navbar-link-hover-color);
   border-radius: 4px;
@@ -154,6 +154,6 @@ h3 {
   margin-top: 16px;
   font-style: normal;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 1.75rem;
   line-height: 120%;
 }
