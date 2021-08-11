@@ -79,7 +79,7 @@
 }
 
 .close_box {
-  margin: 5rem 0;
+  margin: 6rem 0 2.5rem 0;
   display: flex;
   justify-self: start;
 }
@@ -231,7 +231,7 @@
   .card h2 {
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.5rem;
     line-height: 120%;
   }
   #business_card {
