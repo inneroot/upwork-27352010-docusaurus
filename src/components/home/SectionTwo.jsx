@@ -32,7 +32,7 @@ export default function SectionTwo() {
             </li>
             <li>Помогаем с эксплуатацией приложения.</li>
           </ul>
-          <Link to="#" className="btn btn_arrow">
+          <Link to="docs/services/building" className="btn btn_arrow">
             Узнать больше
           </Link>
         </div>
@@ -58,7 +58,7 @@ export default function SectionTwo() {
               <br /> инфраструктуры.
             </li>
           </ul>
-          <Link to="#" className="btn btn_arrow">
+          <Link to="docs/services/infrastructure" className="btn btn_arrow">
             Узнать больше
           </Link>
         </div>
