@@ -11,6 +11,10 @@
   line-height: 150%;
 }
 
+#main_footer span {
+  margin-bottom: 1rem;
+}
+
 #main_footer span a {
   color: var(--footer-link-color);
 }

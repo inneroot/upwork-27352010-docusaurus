@@ -10,15 +10,17 @@ export default function SectionOne() {
     <section className={styles.wrapper}>
       <div className={styles.container}>
         <div id={styles.text}>
-          <h1 id={styles.h1}>
-            Профессиональные
-            <br />
-            практики <span>DevOps</span>
-          </h1>
-          <p className={styles.hero__text}>
-            Мы строим инфраструктуру
-            <br /> и автоматизируем разработку
-          </p>
+          <div id={styles.text_container}>
+            <h1 id={styles.h1}>
+              Профессиональные
+              <br />
+              практики <span>DevOps</span>
+            </h1>
+            <p className={styles.hero__text}>
+              Мы строим инфраструктуру
+              <br /> и автоматизируем разработку
+            </p>
+          </div>
           <img id={styles.m__image} src={illustration_mobile} />
           <div className={styles.hero__btns}>
             <Link to="#" className="btn btn_primary">

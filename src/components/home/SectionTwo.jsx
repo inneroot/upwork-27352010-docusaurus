@@ -7,6 +7,7 @@ export default function SectionTwo() {
   const OpenSrc = useBaseUrl("/img/open.svg");
   const CloseSrc = useBaseUrl("/img/close.svg");
   const LogoSrc = useBaseUrl("/img/logo.svg");
+  const mobile_8bg = useBaseUrl("/img/8small.svg");
 
   return (
     <>
@@ -35,9 +36,14 @@ export default function SectionTwo() {
             Узнать больше
           </Link>
         </div>
+        <div className={styles.mobile_center_image}>
+          <img src={mobile_8bg} />
+        </div>
         <div className={styles.card2}>
           <h2>
-            Создание инфраструктуры
+            Создание
+            <br />
+            инфраструктуры
             <br /> для разработки
           </h2>
           <ul>

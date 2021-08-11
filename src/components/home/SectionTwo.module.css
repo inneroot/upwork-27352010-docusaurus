@@ -1,3 +1,7 @@
+.mobile_center_image {
+  display: none;
+}
+
 #wrapper2 {
   display: flex;
   align-items: center;
@@ -21,7 +25,7 @@
 }
 
 .card {
-  max-width: 450px;
+  max-width: 28.125rem;
 }
 
 .card h2 {
@@ -59,8 +63,8 @@
 #open_svg {
   margin-top: -10px;
 }
+
 #open {
-  font-family: Montserrat;
   font-style: normal;
   font-weight: 900;
   font-size: 3rem;
@@ -75,7 +79,7 @@
 }
 
 .close_box {
-  margin-top: 14px;
+  margin: 5rem 0;
   display: flex;
   justify-self: start;
 }
@@ -104,6 +108,7 @@
   font-weight: 300;
   font-size: 0.875rem;
   line-height: 17px;
+  margin: 0;
 }
 
 #business_card_contacts {
@@ -152,4 +157,96 @@
 
 .card_whatsapp::before {
   content: url(/img/whatsapp.svg);
+}
+
+@media only screen and (max-width: 750px) {
+  .mobile_center_image {
+    display: block;
+    align-self: center;
+    margin: 2rem 0;
+  }
+
+  #wrapper2 {
+    margin: 4rem 5vw 2rem 5vw;
+    display: grid;
+    justify-items: center;
+  }
+
+  .open_box {
+    max-width: 28.125rem;
+  }
+
+  #wrapper3 {
+    background: none;
+    margin: 0 5vw;
+  }
+
+  #wrapper4 {
+    display: grid;
+    justify-content: center;
+    margin: 0 5vw 5rem 5vw;
+  }
+
+  .card1 {
+    align-self: center;
+  }
+
+  .card2 {
+    align-self: center;
+    margin-top: 0;
+  }
+
+  #open__container {
+    padding: 1rem 1rem;
+    align-self: center;
+  }
+
+  #open__container h1 {
+    margin: 0;
+  }
+
+  #open {
+    font-size: min(7vw, 3rem);
+  }
+
+  /* #open_svg {
+    margin-top: 0;
+    height: 25vw;
+  } */
+  .open_box {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+  .close_box {
+    justify-self: start;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+
+  .card h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 120%;
+  }
+  #business_card {
+    width: 100%;
+    max-width: 25rem;
+    min-width: 19rem;
+    height: 100%;
+    background: #f2f8ff;
+    background-image: url(/img/business_card_bg-mobile.svg);
+    padding-bottom: 200px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+  #business_card_contacts {
+    font-size: 1rem;
+    font-weight: 500;
+    grid-template-columns: auto;
+    background: none;
+  }
 }

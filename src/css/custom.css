@@ -39,6 +39,7 @@ body {
   /* background-image: url(/img/mobile-main-320-y.png); */
   background-size: 320px;
   position: relative;
+  font-size: 1rem;
 }
 
 h1 {

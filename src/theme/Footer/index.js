@@ -5,7 +5,10 @@ import styles from "./Footer.module.css";
 function Footer() {
   return (
     <footer id={styles.main_footer}>
-      <span>© 2021 Гелеор</span>
+      <span>
+        © 2021 Гелеор
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>
       <span>
         <a href="#">Политика конфиденциальности</a>
       </span>
