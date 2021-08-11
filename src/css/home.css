@@ -9,3 +9,10 @@
   position: absolute;
   width: 2000px;
 }
+
+@media only screen and (max-width: 750px) {
+  .main__box {
+    background-image: url(/img/hero-curve-mobile.svg);
+    background-size: contain;
+  }
+}
