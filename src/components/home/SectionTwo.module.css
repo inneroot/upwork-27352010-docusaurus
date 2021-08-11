@@ -158,14 +158,21 @@
 .card_whatsapp::before {
   content: url(/img/whatsapp.svg);
 }
-
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1500px) {
+  #wrapper3 {
+    background: none;
+  }
   .mobile_center_image {
     display: block;
     align-self: center;
     margin: 2rem 0;
   }
+  .card2 {
+    margin-top: 0;
+  }
+}
 
+@media only screen and (max-width: 750px) {
   #wrapper2 {
     margin: 4rem 5vw 2rem 5vw;
     display: grid;
@@ -209,10 +216,6 @@
     font-size: min(7vw, 3rem);
   }
 
-  /* #open_svg {
-    margin-top: 0;
-    height: 25vw;
-  } */
   .open_box {
     display: grid;
     grid-template-columns: auto 1fr;
