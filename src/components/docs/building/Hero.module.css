@@ -53,6 +53,12 @@
 .section .cicdmobile {
   display: none;
 }
+@media (max-width: 1650px) {
+  .section {
+    background-size: 50%;
+    background-position: bottom;
+  }
+}
 
 @media only screen and (max-width: 750px) {
   .section {

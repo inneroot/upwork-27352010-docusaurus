@@ -6,8 +6,8 @@ import { CARDS, BUTTONS } from "./cards";
 function MobileView({ cardNumber }) {
   return (
     <div>
-      {CARDS.map((card) => (
-        <div>
+      {CARDS.map((card, ind) => (
+        <div key={ind}>
           <h3>{card.heading}</h3>
           {card.hint && <span className={styles.hint}>{card.hint}</span>}
           {card.paragraphs.map((line, index) => {
