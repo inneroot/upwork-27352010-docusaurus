@@ -244,12 +244,13 @@
 .container__mobile {
   display: none;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1650px) {
   .container__desktop {
     display: none;
   }
   .container__mobile {
     display: grid;
+    max-width: 500px;
   }
 
   .container {

@@ -163,9 +163,10 @@ figcaption {
   border-top: 4px dashed rgba(9, 30, 66, 0.12);
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1650px) {
   .container {
     grid-template-columns: 1fr;
+    max-width: 600px;
   }
   .section__1,
   .section__2,
@@ -207,7 +208,7 @@ figcaption {
     font-size: 1rem;
   }
 
-  .heading img{
+  .heading img {
     height: 4.5rem;
   }
 }

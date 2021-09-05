@@ -150,7 +150,7 @@
   padding: 5px 1rem;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1650px) {
   .container {
     display: none;
   }
