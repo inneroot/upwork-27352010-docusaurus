@@ -59,10 +59,33 @@
     padding-top: 1rem;
     background: none;
   }
+  .section p {
+    font-size: 1rem;
+  }
+  .section p span {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+  .section > ul {
+    padding-left: 0;
+  }
+
+  .section ul li {
+    font-size: 0.9rem;
+  }
+  .section > ul > li > span {
+    font-size: 1rem;
+    margin-left: 0.1rem;
+  }
+
   .section .cicdmobile {
     display: block;
   }
   .section h1 {
     font-size: min(7.4vw, 3rem);
+  }
+
+  .section img {
+    margin: auto;
   }
 }

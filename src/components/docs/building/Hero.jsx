@@ -7,7 +7,9 @@ export default function Hero() {
   return (
     <section className={styles.section}>
       <h1>Построение процессов CI/CD</h1>
-      <p>Автоматизируем {"{"}</p>
+      <p>
+        Автоматизируем <span>{"{"}</span>
+      </p>
       <ul className={styles.list}>
         <li>разработку</li>
         <li>запуск</li>
