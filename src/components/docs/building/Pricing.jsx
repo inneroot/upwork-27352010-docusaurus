@@ -918,6 +918,7 @@ export default function Pricing() {
           </div>
         </div>
       </section>
+
       <section className={`${styles.container__mobile} ${styles.container}`}>
         <span>Калькулятор стоимости построения процессов CI/CD</span>
         <div className={styles.table__head}>
@@ -1550,6 +1551,435 @@ export default function Pricing() {
           </div>
         </div>
       </section>
+
+      <section
+        className={`${styles.container} ${styles.container__mobile__calulate}`}
+      >
+        <div className={styles.table__head}>
+          <div className={styles.table__head__label}></div>
+          <div>
+            <img src={calc_prj} />
+            <br />
+            Ваш проект
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>
+              Кол-во модулей приложения
+              <br />
+              на языках
+            </strong>
+            <Tooltip
+              info={
+                <div>
+                  Введите кол-во модулей приложения, написанных на различных
+                  языках, сборку которых необходимо автоматизировать.
+                  <br />
+                  <br />
+                  Пример:
+                  <br />
+                  Изначально приложение было написано PHP и состояло из 15
+                  модулей. Со временем часть кода переписали на Go для ускорения
+                  отдельных частей и оно стало состоять из 12 модулей на PHP и 3
+                  модулей на Go. Затем понадобилась специфическая функция (типа
+                  распознавания изображений), выбрали готовую библиотеку на
+                  Python (из-за минимальных трудозатрат на внедрение) и теперь
+                  приложение состоит из 12 модулей на PHP, 3 модулей на Go и 2
+                  модулей на Python.
+                </div>
+              }
+            />
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Golang</div>
+          <div>
+            <DigitsEff store={_QTY_APPS_GO} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>PHP</div>
+          <div>
+            <DigitsEff store={_QTY_APPS_PHP} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Java</div>
+          <div>
+            <DigitsEff store={_QTY_APPS_JAVA} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Python</div>
+          <div>
+            <DigitsEff store={_QTY_APPS_PY} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Виды окружений</strong>{" "}
+            <Tooltip
+              info={
+                <div>
+                  Укажите нужные Вам окружения.
+                  <br />
+                  На старте создания приложения может быть достаточно только
+                  окружения разработки, для большого проекта окружений может
+                  быть более 10-тка.
+                  <br />
+                  Именование окружений:
+                  <br />
+                  Prod — окружение рабочего развёртывания с которым
+                  непосредственно взаимодействуют пользователи.
+                  <br />
+                  Dev — окружение разработки.
+                  <br />
+                  Stage — окружение промежуточного развёртывания между Dev и
+                  Prod. Обычно является зеркалом Prod`а, но без пользовательской
+                  нагрузки и используется для предварительного просмотра новых
+                  функций и нагрузочного тестирования.
+                  <br />
+                  Test/QA — тестовое окружение для автоматических и ручных
+                  проверок.
+                  <br />
+                  Integration — Основа для построения CI или для тестирования
+                  сайд-эффектов разработчиком
+                </div>
+              }
+            />
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Dev</div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Integration</div>
+          <div>
+            <CheckboxEff store={_Integration} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Test/QA</div>
+          <div>
+            <CheckboxEff store={_TestQA} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Stage/Demo</div>
+          <div>
+            <CheckboxEff store={_StageDemo} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Prod</div>
+          <div>
+            <CheckboxEff store={_Prod} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Инфраструктура</strong>{" "}
+            <Tooltip
+              info={
+                <div>
+                  Укажите сторонние сервисы, которые используется в Вашем
+                  приложении.
+                  <br />
+                  В калькуляторе для расчета используются трудозатраты
+                  построения сервисов в неотказоустойчивом (некластерном)
+                  варианте развёртывания. Расчет высокодоступных и
+                  отказоустойчивых вариантов производится индивидуально под
+                  конкретные требования:
+                  <br />
+                  <ul>
+                    <li>
+                      размер домена отказа: ВМ, хост, стойка, машзал, ЦОД,
+                      провайдер;
+                    </li>
+                    <li>
+                      RTO и RPO (допустимое время простоя сервиса в случае сбоя
+                      и допустимый объем возможных потерь данных в случае сбоя
+                      соответственно);
+                    </li>
+                    <li>требуемая производительность сервиса.</li>
+                  </ul>
+                </div>
+              }
+            />
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>СУБД (MySQL, PSQL, noSQL)</div>
+          <div>
+            <CheckboxEff store={_SUBD} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Rabbit, Kafka</div>
+          <div>
+            <CheckboxEff store={_RabbitKafka} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Redis, Memcached</div>
+          <div>
+            <CheckboxEff store={_Redis} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Nginx, Apache, Traefik</div>
+          <div>
+            <CheckboxEff store={_Nginx} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>
+            Terraform, Ansible, GitLab Runner
+          </div>
+          <div>
+            <CheckboxEff store={_Terraform} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Vault</div>
+          <div>
+            <CheckboxEff store={_Vault} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>MinIO S3</div>
+          <div>
+            <CheckboxEff store={_MinIO} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Docker-registry</div>
+          <div>
+            <CheckboxEff store={_Docker} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Elasticsearch, Kibana, Fluent</div>
+          <div>
+            <CheckboxEff store={_Elastic} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Prometheus, VictoriaMetrics</div>
+          <div>
+            <CheckboxEff store={_Prometheus} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Другие сервисы</div>
+          <div>
+            <DigitsEff store={_OtherServices} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Наводим порядок в системе разработки</strong>
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>
+            Единообразный код
+            <Tooltip info="Подберем и внедрим линтеры для анализа стилистики и соответствия кода лучшим практикам." />
+          </div>
+          <div>
+            <CheckboxEff store={_uniformCode} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>
+            Чистый код
+            <Tooltip info="Внедрим инструменты сканирования кода на наличие чувствительных данных." />
+          </div>
+          <div>
+            <CheckboxEff store={_cleanCode} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Повышаем стабильность и скорость сборки</strong>
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>
+            Эффективный процесс сборки
+            <Tooltip info="Автоматизируем создания окружений сборки. Снижаем размер артефактов. Распараллеливаем процесс сборки. " />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>
+            Унифицированные окружения
+            <Tooltip info="Стандартизируем управление окружениями с помощью систем хранения секретов и хранилищ артефактов (s3, registry и т.д.)" />
+          </div>
+          <div>
+            <CheckboxEff store={_unifiedEnvs} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Тестируем приложение</strong>
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>
+            Тестирование качества и безопасности кода
+            <Tooltip
+              info={
+                <div>
+                  Внедряем систему контроля качества и безопасности кода
+                  SonarQube, PVS-Studio.
+                  <br />В калькуляторе для расчета используются трудозатраты
+                  внедрения SonarQube CommunityEdition с параметрами «по
+                  умолчанию» и настройки базовых проверок:
+                  <ul>
+                    <li>кода на баги и уязвимости;</li>
+                    <li>ошибки в конструкциях кода (code smells);</li>
+                    <li>покрытие кода тестами;</li>
+                    <li>дублировании кода.</li>
+                  </ul>
+                  Расчет стоимости внедрения расширенной версии SonarQube
+                  производится индивидуально под конкретные требования.
+                </div>
+              }
+            />
+          </div>
+          <div>
+            <CheckboxEff store={_testingCode} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>
+            Нагрузочное тестирование
+            <Tooltip info="Дополняем конвейеры нагрузочным тестированием используя JMeter, Яндекс.Танк" />
+          </div>
+          <div>
+            <CheckboxEff store={_stressTesting} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>
+            Функциональное тестирование
+            <Tooltip info="Дополняем конвейеры функциональным тестированием используя Selenium." />
+          </div>
+          <div>
+            <CheckboxEff store={_functionalTesting} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Обеспечиваем контролируемое развёртывание</strong>
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>
+            Эффективный процесс развёртывания
+            <Tooltip info="Автоматизируем развёртывание приложения в окружения используя Terraform, Ansible." />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>
+            Минимальное влияние
+            <br />
+            на пользователей
+            <Tooltip
+              info={
+                <div>
+                  Подбираем стратегию выкатки (canary, blue-green) для вашего
+                  приложения.
+                  <br />
+                  Подготавливаем автоматические сценарии отката изменений
+                  (rollback).
+                </div>
+              }
+            />
+          </div>
+          <div>
+            <CheckboxEff store={_hurtless} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Выявляем и решаем проблемы прода</strong>
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>
+            Производительная инфраструктура
+            <Tooltip info="Анализируем узкие места в производительности вашей инфраструктуры и избавляемся от них. " />
+          </div>
+          <div>
+            <CheckboxEff store={_infrastr} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>
+            Минимум простоя в случае отказа компонентов прода
+            <Tooltip info="Внедряем процесс регулярного тестирования прода (Chaos Monkey)." />
+          </div>
+          <div>
+            <CheckboxEff store={_minDowntime} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Показываем целостную картину</strong>
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>
+            Быстрая диагностика
+            <Tooltip info="Внедряем мониторинг, алертинг и логирование для всех компонентов прода" />
+          </div>
+
+          <div>
+            <CheckboxEff store={_fastDiagnostics} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>
+            Контролируемый уровень сервиса
+            <Tooltip info="Помогаем определить SLI и SLO для вашего сервиса" />
+          </div>
+          <div>
+            <CheckboxEff store={_controlledLevel} />
+          </div>
+        </div>
+        <div className={styles.table__footer}>
+          <div className={styles.cell_start}>
+            <br />
+            <strong>Стоимость, с НДС</strong>
+          </div>
+          <div>
+            <span>{Math.floor(calculateCost(allData) / 1000)}</span>
+            <br />
+            тыс.руб
+          </div>
+        </div>
+      </section>
+
       <div className={styles.mark}>
         По окончанию внедрения, мы так же можем взять на себя техническую
         поддержку конвейеров, инфраструктурных сервисов и прода.

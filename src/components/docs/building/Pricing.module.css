@@ -244,6 +244,11 @@
 .container__mobile {
   display: none;
 }
+
+.container__mobile__calulate {
+  display: none;
+}
+
 @media only screen and (max-width: 1650px) {
   .container__desktop {
     display: none;
@@ -256,6 +261,12 @@
   .container {
     margin: 0;
     font-size: 0.8rem;
+  }
+
+  .container__mobile__calulate {
+    display: grid;
+    max-width: 500px;
+    margin-top: 1.5rem;
   }
 
   .container__mobile > span {
@@ -282,26 +293,28 @@
   }
 
   .container > .table__head > div {
-    border-width: 2px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
   }
+
+  .container > .table__footer > div {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
   .container > .row > div,
-  .container > .row_white > div {
+  .container > .row_white > div,
+  .container > .table__footer > div,
+  .container > .table__head > div {
     border-width: 2px;
   }
+
   .container > .table__head > .cell_start,
   .container > .table__footer > .cell_start,
   .container > .row > .cell_start,
   .container > .row_white > .cell_start {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-  }
-
-  .container > .table__footer > div {
-    border-width: 2px;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
   }
 
   .container > .table__head > div {
@@ -335,9 +348,25 @@
   }
   .container > .table__footer div {
     font-size: 0.5rem;
+    padding-bottom: 0.8rem;
   }
   .container > .table__footer div,
   .container > .table__footer > .cell_start strong {
     padding-top: 1rem;
+  }
+
+  .container__mobile__calulate > .table__head,
+  .container__mobile__calulate > .table__footer,
+  .container__mobile__calulate > .row,
+  .container__mobile__calulate > .row_white {
+    display: grid;
+    grid-template-columns: 1fr 8.8rem;
+  }
+
+  .container__mobile__calulate > .row > div,
+  .container__mobile__calulate > .row_white > div,
+  .container__mobile__calulate > .table__footer > div,
+  .container__mobile__calulate > .table__head > div {
+    border-color: #0052cc;
   }
 }
