@@ -125,3 +125,37 @@
   width: 1px;
   border-left: 2px dashed #091e42;
 }
+
+.container__mobile {
+  display: none;
+}
+
+.container__mobile h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 120%;
+}
+
+.container__mobile .line {
+  margin-bottom: 0;
+}
+
+.container__mobile .hint {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #0052cc;
+  padding: 5px 1rem;
+}
+
+@media only screen and (max-width: 750px) {
+  .container {
+    display: none;
+  }
+
+  .container__mobile {
+    display: block;
+  }
+}

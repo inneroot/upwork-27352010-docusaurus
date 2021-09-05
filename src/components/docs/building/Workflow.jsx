@@ -3,6 +3,28 @@ import styles from "./Workflow.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { CARDS, BUTTONS } from "./cards";
 
+function MobileView({ cardNumber }) {
+  return (
+    <div>
+      {CARDS.map((card) => (
+        <div>
+          <h3>{card.heading}</h3>
+          {card.hint && <span className={styles.hint}>{card.hint}</span>}
+          {card.paragraphs.map((line, index) => {
+            const imgsrc = useBaseUrl(`/img/workflow/${line.img}.svg`);
+            return (
+              <div className={styles.line} key={index}>
+                <img src={imgsrc} />
+                <p>{line.text}</p>
+              </div>
+            );
+          })}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function Card({ cardNumber }) {
   const paragraphs = CARDS[cardNumber].paragraphs.map((line, index) => {
     const imgsrc = useBaseUrl(`/img/workflow/${line.img}.svg`);
@@ -41,12 +63,17 @@ export default function Workflow() {
   ));
 
   return (
-    <section className={styles.container}>
-      <Card cardNumber={cardNumber} />
-      <div className={styles.control__panel}>
-        <div className={styles.dashed}></div>
-        {buttons}
-      </div>
-    </section>
+    <>
+      <section className={styles.container}>
+        <Card cardNumber={cardNumber} />
+        <div className={styles.control__panel}>
+          <div className={styles.dashed}></div>
+          {buttons}
+        </div>
+      </section>
+      <section className={styles.container__mobile}>
+        <MobileView />
+      </section>
+    </>
   );
 }
