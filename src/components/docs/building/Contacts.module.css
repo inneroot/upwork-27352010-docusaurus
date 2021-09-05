@@ -79,3 +79,65 @@
 .card_whatsapp::before {
   content: url(/img/whatsapp.svg);
 }
+
+#business_card__mobile {
+  display: none;
+  padding: 2.5rem;
+  border-radius: 20px;
+  justify-self: center;
+  width: 507px;
+  height: 280px;
+  overflow: hidden;
+  background: #f2f8ff;
+  background-image: url(/img/business_card_bg.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  box-shadow: 0px 20px 40px rgba(9, 30, 66, 0.14);
+  border-radius: 20px;
+}
+
+#business_card_logo__mobile {
+  height: 1.5rem;
+}
+
+#business_card__mobile p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 20px;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+#business_card_contacts__mobile {
+  margin-top: 47px;
+  display: grid;
+  width: 87%;
+  grid-template-columns: auto auto;
+}
+
+@media only screen and (max-width: 750px) {
+  #business_card {
+    display: none;
+  }
+  #business_card__mobile {
+    display: grid;
+    width: 100%;
+    max-width: 25rem;
+    min-width: 19rem;
+    height: 100%;
+    background: #f2f8ff;
+    background-image: url(/img/business_card_bg-mobile.svg);
+    padding-bottom: 200px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+  #business_card_contacts__mobile {
+    font-size: 1rem;
+    font-weight: 500;
+    grid-template-columns: auto;
+    background: none;
+    row-gap: 1rem;
+  }
+}
