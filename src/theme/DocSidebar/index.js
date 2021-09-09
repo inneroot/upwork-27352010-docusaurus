@@ -23,6 +23,9 @@ import IconMenu from "@theme/IconMenu";
 import IconExternalLink from "@theme/IconExternalLink";
 import { translate } from "@docusaurus/Translate";
 import styles from "./styles.module.css";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+
 const MOBILE_TOGGLE_SIZE = 24;
 
 const isActiveSidebarItem = (item, activePath) => {
@@ -324,6 +327,8 @@ function DocSidebar({
   onCollapse,
   isHidden,
 }) {
+  const logosrc = useBaseUrl("/img/logo.svg");
+  const { siteConfig } = useDocusaurusContext();
   const showAnnouncementBar = useShowAnnouncementBar();
   const {
     navbar: { hideOnScroll },
@@ -342,6 +347,9 @@ function DocSidebar({
         [styles.sidebarHidden]: isHidden,
       })}
     >
+      <Link to={siteConfig.baseUrl}>
+        <img src={logosrc} className={styles.sidebar__logo} />
+      </Link>
       {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
       <nav
         className={clsx(

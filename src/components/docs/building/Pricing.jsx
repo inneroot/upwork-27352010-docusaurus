@@ -4,6 +4,7 @@ import { useStore } from "effector-react";
 import styles from "./Pricing.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { calculateCost } from "./calc";
+import clsx from "clsx";
 
 //Инициализация всех переключателей с их значениями по умолчанию
 
@@ -56,7 +57,7 @@ function Tooltip({ info }) {
     <>
       <div className={styles.tooltip}>
         <img src={circle} className={styles.tooltip__element} />
-        <div className={`${styles.tooltip__info} ${styles.wide_tooltip}`}>
+        <div className={clsx(styles.tooltip__info, styles.wide_tooltip)}>
           {info}
         </div>
       </div>
@@ -167,7 +168,7 @@ export default function Pricing() {
 
   return (
     <>
-      <section className={`${styles.container} ${styles.container__desktop}`}>
+      <section className={clsx(styles.container, styles.container__desktop)}>
         <div className={styles.table__head}>
           <div className={styles.table__head__label}>
             <span>
@@ -919,7 +920,7 @@ export default function Pricing() {
         </div>
       </section>
 
-      <section className={`${styles.container__mobile} ${styles.container}`}>
+      <section className={clsx(styles.container__mobile, styles.container)}>
         <span>Калькулятор стоимости построения процессов CI/CD</span>
         <div className={styles.table__head}>
           <div className={styles.table__head__label}></div>
@@ -1553,7 +1554,7 @@ export default function Pricing() {
       </section>
 
       <section
-        className={`${styles.container} ${styles.container__mobile__calulate}`}
+        className={clsx(styles.container, styles.container__mobile__calulate)}
       >
         <div className={styles.table__head}>
           <div className={styles.table__head__label}></div>

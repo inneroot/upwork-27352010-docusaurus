@@ -14,10 +14,6 @@ module.exports = {
       disableSwitch: true,
     },
     navbar: {
-      logo: {
-        alt: "Гелеор",
-        src: "img/logo.svg",
-      },
       items: [
         {
           type: "doc",

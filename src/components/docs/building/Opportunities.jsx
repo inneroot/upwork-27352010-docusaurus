@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Opportunities.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import clsx from "clsx";
 
 export default function Opportunities() {
   const code = useBaseUrl("/img/opportunities/code.svg");
@@ -42,7 +43,7 @@ export default function Opportunities() {
   return (
     <section className={styles.container}>
       <section className={styles.section__1}>
-        <div className={`${styles.heading} ${styles.heading__1}`}>
+        <div className={clsx(styles.heading, styles.heading__1)}>
           <img src={code} />
           <p className={styles.title}>Написание кода</p>
         </div>
@@ -81,7 +82,7 @@ export default function Opportunities() {
       </section>
 
       <section className={styles.section__2}>
-        <div className={`${styles.heading} ${styles.heading__2}`}>
+        <div className={clsx(styles.heading, styles.heading__2)}>
           <img src={maintenance} />
           <p className={styles.title}>Сборка кода</p>
         </div>
@@ -120,7 +121,7 @@ export default function Opportunities() {
       </section>
 
       <section className={styles.section__3}>
-        <div className={`${styles.heading} ${styles.heading__3}`}>
+        <div className={clsx(styles.heading, styles.heading__3)}>
           <img src={testing} />
           <p className={styles.title}>Тестирование</p>
         </div>
@@ -154,7 +155,7 @@ export default function Opportunities() {
       </section>
 
       <section className={styles.section__4}>
-        <div className={`${styles.heading} ${styles.heading__4}`}>
+        <div className={clsx(styles.heading, styles.heading__4)}>
           <img src={deploy} />
           <p className={styles.title}>Развёртывание в прод</p>
         </div>
@@ -191,7 +192,7 @@ export default function Opportunities() {
 
       <section className={styles.section__5}>
         <hr />
-        <div className={`${styles.heading} ${styles.heading__5}`}>
+        <div className={clsx(styles.heading, styles.heading__5)}>
           <img src={expluatation} />
           <p className={styles.title}>Эксплуатация</p>
         </div>
@@ -230,7 +231,7 @@ export default function Opportunities() {
       </section>
 
       <section className={styles.section__6}>
-        <div className={`${styles.heading} ${styles.heading__6}`}>
+        <div className={clsx(styles.heading, styles.heading__6)}>
           <img src={monitoring} />
           <p className={styles.title}>Мониторинг</p>
         </div>

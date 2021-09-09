@@ -31,6 +31,7 @@
   --ifm-navbar-padding-horizontal: 0;
   --ifm-toc-padding-vertical: 20px;
   --ifm-toc-link-color: #091e42;
+  --ifm-z-index-fixed: 0;
 }
 
 body {
