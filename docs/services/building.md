@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: "Построение процессов CI/CD"
+custom_edit_url: null
 ---
 
 import Hero from "../../src/components/docs/building/Hero"
