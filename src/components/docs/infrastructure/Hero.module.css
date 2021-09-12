@@ -40,10 +40,20 @@
 @media only screen and (max-width: 1650px) {
   .section {
     grid-template-columns: 1fr;
+    padding-top: 0;
+  }
+  .span p {
+    width: 23ch;
+  }
+  .section span {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 150%;
   }
 
   .section div {
-    padding-top: 1rem;
+    padding-top: 0;
   }
 
   .section .desktop {
@@ -57,5 +67,25 @@
   .section img {
     width: 80%;
     margin-bottom: 0;
+  }
+
+  .section p {
+    font-size: 1rem;
+  }
+  .section p span {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+
+  .section .cicdmobile {
+    display: block;
+  }
+  .section h1 {
+    padding-top: 1rem;
+    font-size: min(7.4vw, 3rem);
+  }
+
+  .section img {
+    margin: auto;
   }
 }

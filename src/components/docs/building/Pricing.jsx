@@ -138,6 +138,7 @@ export default function Pricing() {
         <div className={styles.row}>
           <div className={styles.heading_start}>
             <strong>
+              <br />
               Кол-во модулей приложения
               <br />
               на языках
@@ -206,7 +207,10 @@ export default function Pricing() {
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
-            <strong>Виды окружений</strong>{" "}
+            <strong>
+              <br />
+              Виды окружений
+            </strong>{" "}
             <Tooltip
               info={
                 <div>
@@ -319,7 +323,10 @@ export default function Pricing() {
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
-            <strong>Инфраструктура</strong>{" "}
+            <strong>
+              <br />
+              Инфраструктура
+            </strong>{" "}
             <Tooltip
               info={
                 <div>
@@ -516,7 +523,10 @@ export default function Pricing() {
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
-            <strong>Наводим порядок в системе разработки</strong>
+            <strong>
+              <br />
+              Наводим порядок в системе разработки
+            </strong>
           </div>
           <div />
           <div />
@@ -561,7 +571,10 @@ export default function Pricing() {
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
-            <strong>Повышаем стабильность и скорость сборки</strong>
+            <strong>
+              <br />
+              Повышаем стабильность и скорость сборки
+            </strong>
           </div>
           <div />
           <div />
@@ -606,7 +619,10 @@ export default function Pricing() {
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
-            <strong>Тестируем приложение</strong>
+            <strong>
+              <br />
+              Тестируем приложение
+            </strong>
           </div>
           <div />
           <div />
@@ -687,7 +703,10 @@ export default function Pricing() {
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
-            <strong>Обеспечиваем контролируемое развёртывание</strong>
+            <strong>
+              <br />
+              Обеспечиваем контролируемое развёртывание
+            </strong>
           </div>
           <div />
           <div />
@@ -744,7 +763,10 @@ export default function Pricing() {
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
-            <strong>Выявляем и решаем проблемы прода</strong>
+            <strong>
+              <br />
+              Выявляем и решаем проблемы прода
+            </strong>
           </div>
           <div />
           <div />
@@ -789,7 +811,10 @@ export default function Pricing() {
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
-            <strong>Показываем целостную картину</strong>
+            <strong>
+              <br />
+              Показываем целостную картину
+            </strong>
           </div>
           <div />
           <div />
@@ -877,6 +902,7 @@ export default function Pricing() {
         <div className={styles.row}>
           <div className={styles.heading_start}>
             <strong>
+              <br />
               Кол-во модулей приложения
               <br />
               на языках
@@ -1489,6 +1515,8 @@ export default function Pricing() {
           </div>
         </div>
       </section>
+
+
 
       <section
         className={clsx(styles.container, styles.container__mobile__calulate)}

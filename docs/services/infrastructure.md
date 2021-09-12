@@ -7,6 +7,10 @@ custom_edit_url: null
 import Hero from "../../src/components/docs/infrastructure/Hero"
 import PossibilitiesLazy from "../../src/components/docs/infrastructure/PossibilitiesLazy"
 import Workflow from "../../src/components/docs/building/Workflow"
+import CalculatorCloud from "../../src/components/docs/infrastructure/CalculatorCloud"
+import CalculatorKuber from "../../src/components/docs/infrastructure/CalculatorKuber"
+import Mark from "../../src/components/common/Mark"
+import Contacts from "../../src/components/docs/building/Contacts"
 
 <Hero />
 
@@ -32,6 +36,8 @@ import Workflow from "../../src/components/docs/building/Workflow"
 
 <CalculatorKuber />
 
-## Остались вопросы?
+<Mark/>
 
-Свяжитесь с нами!
+## Контакты
+
+<Contacts />
