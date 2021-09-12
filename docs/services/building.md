@@ -32,7 +32,7 @@ import Contacts from "../../src/components/docs/building/Contacts"
 
 Окончательную стоимость мы сможем озвучить после обсуждения задачи и обследования вашей инфраструктуры
 
-<PricingLazy />
+<Pricing />
 
 ## Контакты
 
