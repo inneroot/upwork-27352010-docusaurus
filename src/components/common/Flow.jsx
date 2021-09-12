@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { createApi, createStore } from "effector";
 import styles from "./Flow.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -47,6 +48,7 @@ function Card({ CARDS, cardNumber }) {
     </div>
   );
 }
+createStore;
 
 export default function Flow({ CARDS, BUTTONS }) {
   const [cardNumber, setCardNumber] = useState(0); // const code = useBaseUrl("/img/code.svg");

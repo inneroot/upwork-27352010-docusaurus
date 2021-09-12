@@ -5,7 +5,9 @@ import styles from "./Pricing.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { calculateCost } from "./calc";
 import clsx from "clsx";
-
+import Tooltip from "../../common/Tooltip";
+import CheckboxEff from "../../common/CheckboxEff";
+import DigitsEff from "../../common/DigitsEff";
 //Инициализация всех переключателей с их значениями по умолчанию
 
 //Кол-во модулей приложения на языках
@@ -50,71 +52,6 @@ const _minDowntime = createStore(false);
 //Показываем целостную картину
 const _fastDiagnostics = createStore(false);
 const _controlledLevel = createStore(false);
-
-function Tooltip({ info }) {
-  const circle = useBaseUrl(`/img/pricing/info-circle.svg`);
-  return (
-    <>
-      <div className={styles.tooltip}>
-        <img src={circle} className={styles.tooltip__element} />
-        <div className={clsx(styles.tooltip__info, styles.wide_tooltip)}>
-          {info}
-        </div>
-      </div>
-    </>
-  );
-}
-function DigitsEff({ store }) {
-  const minus = useBaseUrl(`/img/pricing/minus.svg`);
-  const plus = useBaseUrl(`/img/pricing/plus.svg`);
-  const count = useStore(store);
-
-  const { increment, decrement } = createApi(store, {
-    increment: (state) => (state >= 99 ? 99 : state + 1),
-    decrement: (state) => (state < 1 ? 0 : state - 1),
-  });
-
-  return (
-    <div className={styles.digits}>
-      <button onClick={decrement}>
-        <img src={minus} />
-      </button>
-      <div className={styles.count}>{count}</div>
-      <button onClick={increment}>
-        <img src={plus} />
-      </button>
-    </div>
-  );
-}
-
-function Checkbox({ def = false }) {
-  const checked = useBaseUrl(`/img/pricing/checked.svg`);
-  // const unchecked = useBaseUrl(`/img/pricing/unchecked.svg`);
-  const checkbox = useBaseUrl(`/img/pricing/checkbox.svg`);
-  const [isChecked, setIsChecked] = useState(def);
-  return (
-    <button
-      className={styles.checkbox_btn}
-      onClick={() => setIsChecked(!isChecked)}
-    >
-      <img src={isChecked ? checked : checkbox} />
-    </button>
-  );
-}
-function CheckboxEff({ store }) {
-  const checked = useBaseUrl(`/img/pricing/checked.svg`);
-  const checkbox = useBaseUrl(`/img/pricing/checkbox.svg`);
-  const isChecked = useStore(store);
-
-  const { toggle } = createApi(store, {
-    toggle: (state) => !state,
-  });
-  return (
-    <button className={styles.checkbox_btn} onClick={toggle}>
-      <img src={isChecked ? checked : checkbox} />
-    </button>
-  );
-}
 
 export default function Pricing() {
   const checked = useBaseUrl(`/img/pricing/checked.svg`);

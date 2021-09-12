@@ -1,0 +1,24 @@
+.digits {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background: #ffffff;
+  border: 1px solid #0052cc;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 72px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.digits button {
+  border: none;
+  margin: auto;
+  padding: 0;
+  background-color: inherit;
+}
+
+.digits > .count {
+  color: #0052cc;
+}

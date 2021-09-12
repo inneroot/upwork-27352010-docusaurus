@@ -1,47 +1,3 @@
-.tooltip {
-  display: inline;
-}
-
-.tooltip:hover .tooltip__info {
-  display: block;
-}
-
-.tooltip__element {
-  display: inline;
-  white-space: nowrap;
-  margin-left: 4px;
-  padding: 0;
-  transform: translate(0, 0.3rem);
-}
-
-.tooltip > img {
-  width: 1.25rem;
-}
-
-.tooltip__info {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  margin-top: 5px;
-  /* transform: translate(-50%, 0); */
-  z-index: 1;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 0.875rem;
-  line-height: 150%;
-  background: #091e42;
-  box-shadow: 0px 20px 20px rgba(9, 30, 66, 0.4);
-  border-radius: 12px;
-  color: #fff;
-  padding: 1rem;
-}
-
-.wide_tooltip {
-  width: 60ch;
-  text-align: left;
-}
-
 .container {
   margin-top: 3rem;
   margin-left: -16px;
@@ -205,38 +161,6 @@
   padding: 39px 32px;
 }
 
-.digits {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background: #ffffff;
-  border: 1px solid #0052cc;
-  box-sizing: border-box;
-  border-radius: 4px;
-  width: 72px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 150%;
-}
-
-.digits button {
-  border: none;
-  margin: auto;
-  padding: 0;
-  background-color: inherit;
-}
-
-.checkbox_btn {
-  border: none;
-  margin: auto;
-  padding: 0;
-  background-color: inherit;
-}
-
-.digits > .count {
-  color: #0052cc;
-}
-
 .container__desktop {
   display: grid;
 }
@@ -321,21 +245,12 @@
     padding-top: 0.4rem;
   }
 
-  .wide_tooltip {
-    width: calc(100vw - 4rem);
-    text-align: left;
-  }
-
   .container > .row > .heading_start > strong {
     font-size: 0.8rem;
     line-height: 150%;
   }
   .container > .row > .heading_start {
     padding-top: 1.2rem;
-  }
-
-  .tooltip > img {
-    width: 1rem;
   }
 
   .container > .table__footer div span {
