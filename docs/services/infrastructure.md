@@ -5,7 +5,8 @@ custom_edit_url: null
 ---
 
 import Hero from "../../src/components/docs/infrastructure/Hero"
-import Possibilities from "../../src/components/docs/infrastructure/Possibilities"
+import PossibilitiesLazy from "../../src/components/docs/infrastructure/PossibilitiesLazy"
+import Workflow from "../../src/components/docs/building/Workflow"
 
 <Hero />
 
@@ -16,15 +17,20 @@ import Possibilities from "../../src/components/docs/infrastructure/Possibilitie
 
 ## Наши возможности
 
-<Possibilities />
+<PossibilitiesLazy />
 
 ## Как мы работаем
 
-Определение задачи и поиск решения
+<Workflow />
 
 ## Стоимость
 
-В основном зависит от желаемого уровня автоматизации и особенностей Вашего приложения. Ниже приведены примеры расчета стоимости проектов. Для обсуждения именно Вашего проекта, пожалуйста, свяжитесь с нами.
+В основном зависит от желаемого уровня автоматизации и особенностей Вашего приложения.
+Калькулятор ниже поможет Вам получить примерную стоимость наших услуг, а окончательную стоимость мы сможем озвучить после обсуждения с Вами задачи и обследования имеющейся инфраструктуры.
+
+<CalculatorCloud />
+
+<CalculatorKuber />
 
 ## Остались вопросы?
 

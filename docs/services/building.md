@@ -5,9 +5,9 @@ custom_edit_url: null
 ---
 
 import Hero from "../../src/components/docs/building/Hero"
-import Opportunities from "../../src/components/docs/building/Opportunities"
+import OpportunitiesLazy from "../../src/components/docs/building/OpportunitiesLazy"
 import Workflow from "../../src/components/docs/building/Workflow"
-import Pricing from "../../src/components/docs/building/Pricing"
+import PricingLazy from "../../src/components/docs/building/PricingLazy"
 import Contacts from "../../src/components/docs/building/Contacts"
 
 <Hero />
@@ -20,7 +20,7 @@ import Contacts from "../../src/components/docs/building/Contacts"
 
 ## Наши возможности
 
-<Opportunities />
+<OpportunitiesLazy />
 
 ## Как мы работаем
 
@@ -32,7 +32,7 @@ import Contacts from "../../src/components/docs/building/Contacts"
 
 Окончательную стоимость мы сможем озвучить после обсуждения задачи и обследования вашей инфраструктуры
 
-<Pricing />
+<PricingLazy />
 
 ## Контакты
 

@@ -37,7 +37,7 @@
 
 body {
   color: var(--text-color-primary);
-  /* background-color: var(--global-background-color); */
+  background-color: var(--global-background-color);
   /* background-image: url(/img/infra.png); */
   /* background-size: 320px; */
   position: relative;
