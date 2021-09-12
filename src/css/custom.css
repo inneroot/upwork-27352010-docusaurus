@@ -32,6 +32,7 @@
   --ifm-toc-padding-vertical: 20px;
   --ifm-toc-link-color: #091e42;
   --ifm-z-index-fixed: 0;
+  --ifm-navbar-height: 82px;
 }
 
 body {

@@ -11,7 +11,7 @@
 
 .sidebar__logo {
   position: relative;
-  z-index: 500;
+  z-index: 0;
   height: 36px;
   margin-left: 2rem;
   margin-top: 32px;
@@ -104,7 +104,7 @@
 
 .sidebarLogo,
 .collapseSidebarButton {
-  display: none;
+  display: block;
 }
 
 .sidebarMenuIcon {
