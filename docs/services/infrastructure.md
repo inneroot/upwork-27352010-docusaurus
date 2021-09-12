@@ -5,7 +5,7 @@ custom_edit_url: null
 ---
 
 import Hero from "../../src/components/docs/infrastructure/Hero"
-import PossibilitiesLazy from "../../src/components/docs/infrastructure/PossibilitiesLazy"
+import Possibilities from "../../src/components/docs/infrastructure/Possibilities"
 import Workflow from "../../src/components/docs/building/Workflow"
 import CalculatorCloud from "../../src/components/docs/infrastructure/CalculatorCloud"
 import CalculatorKuber from "../../src/components/docs/infrastructure/CalculatorKuber"
@@ -21,7 +21,7 @@ import Contacts from "../../src/components/docs/building/Contacts"
 
 ## Наши возможности
 
-<PossibilitiesLazy />
+<Possibilities />
 
 ## Как мы работаем
 

@@ -5,9 +5,9 @@ custom_edit_url: null
 ---
 
 import Hero from "../../src/components/docs/building/Hero"
-import OpportunitiesLazy from "../../src/components/docs/building/OpportunitiesLazy"
+import Opportunities from "../../src/components/docs/building/Opportunities"
 import Workflow from "../../src/components/docs/building/Workflow"
-import PricingLazy from "../../src/components/docs/building/PricingLazy"
+import Pricing from "../../src/components/docs/building/Pricing"
 import Contacts from "../../src/components/docs/building/Contacts"
 
 <Hero />
@@ -20,7 +20,7 @@ import Contacts from "../../src/components/docs/building/Contacts"
 
 ## Наши возможности
 
-<OpportunitiesLazy />
+<Opportunities />
 
 ## Как мы работаем
 
