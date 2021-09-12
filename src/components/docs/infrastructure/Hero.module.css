@@ -1,0 +1,61 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.section div {
+  padding-top: 8rem;
+}
+.section span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  border-radius: 4px;
+
+  padding: 4px;
+  background: rgba(0, 82, 204, 0.3);
+}
+.section .desktop {
+  width: 21ch;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.section p {
+  margin-left: 0;
+  margin-top: 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+}
+
+.section img {
+  justify-self: stretch;
+  margin-bottom: -6rem;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1650px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .section div {
+    padding-top: 1rem;
+  }
+
+  .section .desktop {
+    display: none;
+  }
+
+  .section .mobile {
+    display: block;
+  }
+
+  .section img {
+    width: 80%;
+    margin-bottom: 0;
+  }
+}
