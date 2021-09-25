@@ -296,10 +296,10 @@ export default function CalculatorCloud() {
             <TooltipCloudHelp />
           </div>
           <div>
-            <img src={checked} />
+            <img src={unchecked} />
           </div>
           <div>
-            <img src={checked} />
+            <img src={unchecked} />
           </div>
           <div>
             <img src={checked} />
@@ -329,17 +329,17 @@ export default function CalculatorCloud() {
         <div className={styles.table__footer}>
           <div className={styles.cell_start}></div>
           <div>
-            <span>500 000 ₽</span>
+            <span>532 000 ₽</span>
             <br />
             цена с НДС
           </div>
           <div>
-            <span>1 000 000 ₽</span>
+            <span>1 018 000 ₽</span>
             <br />
             цена с НДС
           </div>
           <div>
-            <span>2 000 000 ₽</span>
+            <span>1 648 000 ₽</span>
             <br />
             цена с НДС
           </div>
@@ -568,17 +568,17 @@ export default function CalculatorCloud() {
             </strong>
           </div>
           <div>
-            <span>500</span>
+            <span>532</span>
             <br />
             тыч.руб
           </div>
           <div>
-            <span>1000</span>
+            <span>1018</span>
             <br />
             тыч.руб
           </div>
           <div>
-            <span>2000</span>
+            <span>1648</span>
             <br />
             тыч.руб
           </div>

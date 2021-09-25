@@ -469,17 +469,17 @@ export default function CalculatorKuber() {
         <div className={styles.table__footer}>
           <div className={styles.cell_start}></div>
           <div>
-            <span>300 000 ₽</span>
+            <span>875 000 ₽</span>
             <br />
             цена с НДС
           </div>
           <div>
-            <span>600 000 ₽</span>
+            <span>1 305 000 ₽</span>
             <br />
             цена с НДС
           </div>
           <div>
-            <span>1 200 000 ₽</span>
+            <span>1 625 000 ₽</span>
             <br />
             цена с НДС
           </div>
