@@ -37,6 +37,11 @@
   padding: 1rem;
 }
 
+.tooltip__info ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .wide_tooltip {
   width: 60ch;
   text-align: left;

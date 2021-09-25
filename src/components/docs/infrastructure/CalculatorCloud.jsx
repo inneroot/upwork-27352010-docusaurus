@@ -1,11 +1,20 @@
-import React, { useState } from "react";
-import { createStore, createApi } from "effector";
+import React from "react";
+import { createStore } from "effector";
 import { useStore } from "effector-react";
 import styles from "../building/Pricing.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { calculateCost } from "./calc_cloud";
 import clsx from "clsx";
 import Tooltip from "../../common/Tooltip";
+import {
+  TooltipResource,
+  TooltipAvailability,
+  TooltipMonitoring,
+  TooltipServerHelp,
+  TooltipCODHelp,
+  TooltipCloudHelp,
+  TooltipMigrationHelp,
+} from "./Tooltips";
 import CheckboxEff from "../../common/CheckboxEff";
 import RadioEff from "../../common/RadioEff";
 
@@ -87,7 +96,7 @@ export default function CalculatorCloud() {
               <br />
               Количество ресурсов
             </strong>
-            <Tooltip info={<div>Количество ресурсов</div>} />
+            <TooltipResource />
           </div>
           <div />
           <div />
@@ -151,7 +160,18 @@ export default function CalculatorCloud() {
               <br />
               Уровень доступности
             </strong>
-            <Tooltip info={<div>Уровень доступности</div>} />
+            <Tooltip
+              info={
+                <div>
+                  Низкий уровень — управляющие компоненты облака в единственном
+                  экземпляре.
+                  <br />
+                  Высокий уровень — управляющие компоненты облака в двух и более
+                  экземплярах. Выход из строя одного экземпляра, не влияет на
+                  доступность функциональности облака.
+                </div>
+              }
+            />
           </div>
           <div />
           <div />
@@ -194,7 +214,7 @@ export default function CalculatorCloud() {
               <br />
               Мониторинг
             </strong>
-            <Tooltip info={<div>Мониторинг</div>} />
+            <TooltipMonitoring />
           </div>
           <div />
           <div />
@@ -246,7 +266,10 @@ export default function CalculatorCloud() {
           <div />
         </div>
         <div className={styles.row_white}>
-          <div className={styles.cell_start}>Помощь в выборе серверов</div>
+          <div className={styles.cell_start}>
+            Помощь в выборе серверов
+            <TooltipServerHelp />
+          </div>
           <div>
             <img src={checked} />
           </div>
@@ -261,7 +284,10 @@ export default function CalculatorCloud() {
           </div>
         </div>
         <div className={styles.row}>
-          <div className={styles.cell_start}>Помощь в выборе ЦОД</div>
+          <div className={styles.cell_start}>
+            Помощь в выборе ЦОД
+            <TooltipCODHelp />
+          </div>
           <div>
             <img src={checked} />
           </div>
@@ -277,7 +303,30 @@ export default function CalculatorCloud() {
         </div>
         <div className={styles.row_white}>
           <div className={styles.cell_start}>
-            Помощь в выборе платформы для облака
+            Помощь в выборе платформы
+            <br /> для облака
+            <Tooltip
+              info={
+                <div>
+                  Для построения типового облака под разработку мы используем
+                  OpenStack. Однако в ряде обстоятельств:
+                  <ul>
+                    <li>наличие уже купленных лицензий Microsoft/VMware;</li>
+                    <li>
+                      корпоративных политик (актуально для иностранных
+                      филиалов);
+                    </li>
+                    <li>
+                      желания использовать ресурсы имеющихся администраторов для
+                      эксплуатации облака;
+                    </li>
+                  </ul>
+                  построить облако на платформах от Microsoft/VMware может быть
+                  целесообразнее. Чтобы это проверить мы можем провести
+                  технико-экономический анализ.
+                </div>
+              }
+            />
           </div>
           <div>
             <img src={checked} />
@@ -293,7 +342,10 @@ export default function CalculatorCloud() {
           </div>
         </div>
         <div className={styles.row}>
-          <div className={styles.cell_start}>Помощь в миграции</div>
+          <div className={styles.cell_start}>
+            Помощь в миграции
+            <TooltipMigrationHelp />
+          </div>
           <div>
             <img src={unchecked} />
           </div>
@@ -325,7 +377,12 @@ export default function CalculatorCloud() {
             цена с НДС
           </div>
           <div>
-            <span>{(Math.round(calculateCost(allData) / 1000)*1000).toLocaleString("ru-RU")} ₽</span>
+            <span>
+              {(
+                Math.round(calculateCost(allData) / 1000) * 1000
+              ).toLocaleString("ru-RU")}
+              ₽
+            </span>
             <br />
             цена с НДС
           </div>
@@ -352,7 +409,7 @@ export default function CalculatorCloud() {
         <div className={styles.row}>
           <div className={styles.heading_start}>
             <strong>Количество ресурсов</strong>
-            <Tooltip info={<div>Количество ресурсов</div>} />
+            <TooltipResource />
           </div>
           <div />
           <div />
@@ -403,7 +460,7 @@ export default function CalculatorCloud() {
         <div className={styles.row}>
           <div className={styles.heading_start}>
             <strong>Уровень доступности</strong>
-            <Tooltip info={<div>Уровень доступности</div>} />
+            <TooltipAvailability />
           </div>
           <div />
           <div />
@@ -436,7 +493,7 @@ export default function CalculatorCloud() {
         <div className={styles.row}>
           <div className={styles.heading_start}>
             <strong>Мониторинг</strong>
-            <Tooltip info={<div>Мониторинг</div>} />
+            <TooltipMonitoring />
           </div>
           <div />
           <div />
@@ -477,7 +534,10 @@ export default function CalculatorCloud() {
           <div />
         </div>
         <div className={styles.row_white}>
-          <div className={styles.cell_start}>Помощь в выборе серверов</div>
+          <div className={styles.cell_start}>
+            Помощь в выборе серверов
+            <TooltipServerHelp />
+          </div>
           <div>
             <img src={checked} />
           </div>
@@ -489,7 +549,10 @@ export default function CalculatorCloud() {
           </div>
         </div>
         <div className={styles.row}>
-          <div className={styles.cell_start}>Помощь в выборе ЦОД</div>
+          <div className={styles.cell_start}>
+            Помощь в выборе ЦОД
+            <TooltipCODHelp />
+          </div>
           <div>
             <img src={checked} />
           </div>
@@ -503,6 +566,7 @@ export default function CalculatorCloud() {
         <div className={styles.row_white}>
           <div className={styles.cell_start}>
             Помощь в выборе платформы для облака
+            <TooltipCloudHelp />
           </div>
           <div>
             <img src={checked} />
@@ -515,7 +579,10 @@ export default function CalculatorCloud() {
           </div>
         </div>
         <div className={styles.row}>
-          <div className={styles.cell_start}>Помощь в миграции</div>
+          <div className={styles.cell_start}>
+            Помощь в миграции
+            <TooltipMigrationHelp />
+          </div>
           <div>
             <img src={unchecked} />
           </div>
@@ -568,7 +635,7 @@ export default function CalculatorCloud() {
               <br />
               Количество ресурсов
             </strong>
-            <Tooltip info={<div>Количество ресурсов</div>} />
+            <TooltipResource />
           </div>
 
           <div />
@@ -599,11 +666,8 @@ export default function CalculatorCloud() {
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
-            <strong>
-              <br />
-              Уровень доступности
-            </strong>
-            <Tooltip info={<div>Уровень доступности</div>} />
+            <strong>Уровень доступности</strong>
+            <TooltipAvailability />
           </div>
           <div />
         </div>
@@ -616,16 +680,13 @@ export default function CalculatorCloud() {
         <div className={styles.row}>
           <div className={styles.cell_start}>Высокий (для продуктива)</div>
           <div>
-          <RadioEff store={_AVAILABILITY} radioValue={2} />
+            <RadioEff store={_AVAILABILITY} radioValue={2} />
           </div>
         </div>
         <div className={styles.row}>
           <div className={styles.heading_start}>
-            <strong>
-              <br />
-              Мониторинг
-            </strong>
-            <Tooltip info={<div>Мониторинг</div>} />
+            <strong>Мониторинг</strong>
+            <TooltipMonitoring />
           </div>
           <div />
         </div>
@@ -653,13 +714,19 @@ export default function CalculatorCloud() {
           <div />
         </div>
         <div className={styles.row_white}>
-          <div className={styles.cell_start}>Помощь в выборе серверов</div>
+          <div className={styles.cell_start}>
+            Помощь в выборе серверов
+            <TooltipServerHelp />
+          </div>
           <div>
             <CheckboxEff store={_HELP_SERVER} />
           </div>
         </div>
         <div className={styles.row}>
-          <div className={styles.cell_start}>Помощь в выборе ЦОД</div>
+          <div className={styles.cell_start}>
+            Помощь в выборе ЦОД
+            <TooltipCODHelp />
+          </div>
           <div>
             <CheckboxEff store={_HELP_COD} />
           </div>
@@ -667,13 +734,17 @@ export default function CalculatorCloud() {
         <div className={styles.row_white}>
           <div className={styles.cell_start}>
             Помощь в выборе платформы для облака
+            <TooltipCloudHelp />
           </div>
           <div>
             <CheckboxEff store={_HELP_PLATFORM} />
           </div>
         </div>
         <div className={styles.row}>
-          <div className={styles.cell_start}>Помощь в миграции</div>
+          <div className={styles.cell_start}>
+            Помощь в миграции
+            <TooltipMigrationHelp />
+          </div>
           <div>
             <CheckboxEff store={_HELP_MIGRATION} />
           </div>
