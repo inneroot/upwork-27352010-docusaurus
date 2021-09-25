@@ -5,7 +5,6 @@ import styles from "../building/Pricing.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { calculateCost } from "./calc_cloud";
 import clsx from "clsx";
-import Tooltip from "../../common/Tooltip";
 import {
   TooltipResource,
   TooltipAvailability,
@@ -14,7 +13,7 @@ import {
   TooltipCODHelp,
   TooltipCloudHelp,
   TooltipMigrationHelp,
-} from "./Tooltips";
+} from "./CalcTooltipsCloud";
 import CheckboxEff from "../../common/CheckboxEff";
 import RadioEff from "../../common/RadioEff";
 
@@ -160,18 +159,7 @@ export default function CalculatorCloud() {
               <br />
               Уровень доступности
             </strong>
-            <Tooltip
-              info={
-                <div>
-                  Низкий уровень — управляющие компоненты облака в единственном
-                  экземпляре.
-                  <br />
-                  Высокий уровень — управляющие компоненты облака в двух и более
-                  экземплярах. Выход из строя одного экземпляра, не влияет на
-                  доступность функциональности облака.
-                </div>
-              }
-            />
+            <TooltipAvailability />
           </div>
           <div />
           <div />
@@ -305,28 +293,7 @@ export default function CalculatorCloud() {
           <div className={styles.cell_start}>
             Помощь в выборе платформы
             <br /> для облака
-            <Tooltip
-              info={
-                <div>
-                  Для построения типового облака под разработку мы используем
-                  OpenStack. Однако в ряде обстоятельств:
-                  <ul>
-                    <li>наличие уже купленных лицензий Microsoft/VMware;</li>
-                    <li>
-                      корпоративных политик (актуально для иностранных
-                      филиалов);
-                    </li>
-                    <li>
-                      желания использовать ресурсы имеющихся администраторов для
-                      эксплуатации облака;
-                    </li>
-                  </ul>
-                  построить облако на платформах от Microsoft/VMware может быть
-                  целесообразнее. Чтобы это проверить мы можем провести
-                  технико-экономический анализ.
-                </div>
-              }
-            />
+            <TooltipCloudHelp />
           </div>
           <div>
             <img src={checked} />
@@ -637,7 +604,6 @@ export default function CalculatorCloud() {
             </strong>
             <TooltipResource />
           </div>
-
           <div />
         </div>
         <div className={styles.row_white}>

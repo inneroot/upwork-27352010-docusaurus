@@ -5,7 +5,16 @@ import styles from "../building/Pricing.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { calculateCost } from "./calc_kuber";
 import clsx from "clsx";
-import Tooltip from "../../common/Tooltip";
+import {
+  TooltipStWorker,
+  TooltipSpWorker,
+  TooltipCluster,
+  TooltipStorage,
+  TooltipAvailability,
+  TooltipMonitoring,
+  TooltipCODHelp,
+  TooltipServerHelp,
+} from "./CalcTooltipsKuber";
 import CheckboxEff from "../../common/CheckboxEff";
 import RadioEff from "../../common/RadioEff";
 
@@ -18,7 +27,7 @@ const _WorkSt = createStore(2);
 const _WorkSp = createStore(2);
 
 //Тип кластера
-const _ClasterType = createStore(2);
+const _ClusterType = createStore(2);
 
 //Системы хранения данных
 const _StorageType = createStore(2);
@@ -46,7 +55,7 @@ export default function CalculatorKuber() {
   const allData = {
     _WorkSt: useStore(_WorkSt),
     _WorkSp: useStore(_WorkSp),
-    _ClasterType: useStore(_ClasterType),
+    _ClusterType: useStore(_ClusterType),
     _StorageType: useStore(_StorageType),
     _AVAILABILITY: useStore(_AVAILABILITY),
     _BASE_LMA,
@@ -95,7 +104,7 @@ export default function CalculatorKuber() {
               <br />
               Кол-во стандартных воркеров
             </strong>
-            <Tooltip info={<div>Кол-во стандартных воркеров</div>} />
+            <TooltipStWorker />
           </div>
           <div />
           <div />
@@ -153,7 +162,7 @@ export default function CalculatorKuber() {
               <br />
               Кол-во особых воркеров
             </strong>
-            <Tooltip info={<div>Кол-во особых воркеров </div>} />
+            <TooltipSpWorker />
           </div>
           <div />
           <div />
@@ -211,7 +220,7 @@ export default function CalculatorKuber() {
               <br />
               Тип кластера
             </strong>
-            <Tooltip info={<div>Мониторинг</div>} />
+            <TooltipCluster />
           </div>
           <div />
           <div />
@@ -230,7 +239,7 @@ export default function CalculatorKuber() {
             <img src={unchecked} />
           </div>
           <div>
-            <RadioEff store={_ClasterType} radioValue={1} />
+            <RadioEff store={_ClusterType} radioValue={1} />
           </div>
         </div>
         <div className={styles.row}>
@@ -245,7 +254,7 @@ export default function CalculatorKuber() {
             <img src={unchecked} />
           </div>
           <div>
-            <RadioEff store={_ClasterType} radioValue={2} />
+            <RadioEff store={_ClusterType} radioValue={2} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -260,7 +269,7 @@ export default function CalculatorKuber() {
             <img src={checked} />
           </div>
           <div>
-            <RadioEff store={_ClasterType} radioValue={3} />
+            <RadioEff store={_ClusterType} radioValue={3} />
           </div>
         </div>
         <div className={styles.row}>
@@ -269,6 +278,7 @@ export default function CalculatorKuber() {
               <br />
               Системы хранения данных
             </strong>
+            <TooltipStorage />
           </div>
           <div />
           <div />
@@ -326,6 +336,7 @@ export default function CalculatorKuber() {
               <br />
               Уровень доступности
             </strong>
+            <TooltipAvailability />
           </div>
           <div />
           <div />
@@ -368,6 +379,7 @@ export default function CalculatorKuber() {
               <br />
               Мониторинг
             </strong>
+            <TooltipMonitoring />
           </div>
           <div />
           <div />
@@ -419,7 +431,10 @@ export default function CalculatorKuber() {
           <div />
         </div>
         <div className={styles.row_white}>
-          <div className={styles.cell_start}>Помощь в выборе ЦОД</div>
+          <div className={styles.cell_start}>
+            Помощь в выборе ЦОД
+            <TooltipCODHelp />
+          </div>
           <div>
             <img src={checked} />
           </div>
@@ -434,7 +449,10 @@ export default function CalculatorKuber() {
           </div>
         </div>
         <div className={styles.row}>
-          <div className={styles.cell_start}>Помощь в выборе серверов</div>
+          <div className={styles.cell_start}>
+            Помощь в выборе серверов
+            <TooltipServerHelp />
+          </div>
           <div>
             <img src={checked} />
           </div>
