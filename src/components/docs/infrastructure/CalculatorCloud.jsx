@@ -3,24 +3,22 @@ import { createStore, createApi } from "effector";
 import { useStore } from "effector-react";
 import styles from "../building/Pricing.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-// import { calculateCost } from "./calc";
+import { calculateCost } from "./calc_cloud";
 import clsx from "clsx";
 import Tooltip from "../../common/Tooltip";
 import CheckboxEff from "../../common/CheckboxEff";
+import RadioEff from "../../common/RadioEff";
 
 //Инициализация всех переключателей с их значениями по умолчанию
 
 //Количество ресурсов
-const _1000CPU = createStore(false);
-const _5000CPU = createStore(true);
-const _10000CPU = createStore(false);
+const _CPU = createStore(2);
 
 //Уровень доступности
-const _LOW_AVAILABILITY = createStore(false);
-const _HIGH_AVAILABILITY = createStore(true);
+const _AVAILABILITY = createStore(2);
 
 //Мониторинг
-const _BASE_LMA = createStore(true);
+const _BASE_LMA = true;
 const _MONITORING_INTEGRATION = createStore(false);
 
 //Дополнительные услуги
@@ -39,12 +37,9 @@ export default function CalculatorCloud() {
   const calc_prj = useBaseUrl(`/img/pricing/calc.svg`);
 
   const allData = {
-    _1000CPU: useStore(_1000CPU),
-    _5000CPU: useStore(_5000CPU),
-    _10000CPU: useStore(_10000CPU),
-    _LOW_AVAILABILITY: useStore(_LOW_AVAILABILITY),
-    _HIGH_AVAILABILITY: useStore(_HIGH_AVAILABILITY),
-    _BASE_LMA: useStore(_BASE_LMA),
+    _CPU: useStore(_CPU),
+    _AVAILABILITY: useStore(_AVAILABILITY),
+    _BASE_LMA,
     _MONITORING_INTEGRATION: useStore(_MONITORING_INTEGRATION),
     _HELP_SERVER: useStore(_HELP_SERVER),
     _HELP_COD: useStore(_HELP_COD),
@@ -113,7 +108,7 @@ export default function CalculatorCloud() {
             <img src={unchecked} />
           </div>
           <div>
-            <CheckboxEff store={_1000CPU} />
+            <RadioEff store={_CPU} radioValue={1} />
           </div>
         </div>
         <div className={styles.row}>
@@ -130,7 +125,7 @@ export default function CalculatorCloud() {
             <img src={unchecked} />
           </div>
           <div>
-            <CheckboxEff store={_5000CPU} />
+            <RadioEff store={_CPU} radioValue={2} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -147,7 +142,7 @@ export default function CalculatorCloud() {
             <img src={checked} />
           </div>
           <div>
-            <CheckboxEff store={_10000CPU} />
+            <RadioEff store={_CPU} radioValue={3} />
           </div>
         </div>
         <div className={styles.row}>
@@ -175,7 +170,7 @@ export default function CalculatorCloud() {
             <img src={unchecked} />
           </div>
           <div>
-            <CheckboxEff store={_LOW_AVAILABILITY} />
+            <RadioEff store={_AVAILABILITY} radioValue={1} />
           </div>
         </div>
         <div className={styles.row}>
@@ -190,7 +185,7 @@ export default function CalculatorCloud() {
             <img src={checked} />
           </div>
           <div>
-            <CheckboxEff store={_HIGH_AVAILABILITY} />
+            <RadioEff store={_AVAILABILITY} radioValue={2} />
           </div>
         </div>
         <div className={styles.row}>
@@ -218,7 +213,7 @@ export default function CalculatorCloud() {
             <img src={checked} />
           </div>
           <div>
-            <CheckboxEff store={_BASE_LMA} />
+            <img src={checked} />
           </div>
         </div>
         <div className={styles.row}>
@@ -330,8 +325,7 @@ export default function CalculatorCloud() {
             цена с НДС
           </div>
           <div>
-            {/* <span>{calculateCost(allData).toLocaleString("ru-RU")} ₽ </span> */}
-            <span>1 000 000 ₽</span>
+            <span>{(Math.round(calculateCost(allData) / 1000)*1000).toLocaleString("ru-RU")} ₽</span>
             <br />
             цена с НДС
           </div>
@@ -584,7 +578,7 @@ export default function CalculatorCloud() {
             10-20 серверов или 500-1000 vCPU
           </div>
           <div>
-            <CheckboxEff store={_1000CPU} />
+            <RadioEff store={_CPU} radioValue={1} />
           </div>
         </div>
         <div className={styles.row}>
@@ -592,7 +586,7 @@ export default function CalculatorCloud() {
             20-50 серверов или 1000-5000 vCPU
           </div>
           <div>
-            <CheckboxEff store={_5000CPU} />
+            <RadioEff store={_CPU} radioValue={2} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -600,7 +594,7 @@ export default function CalculatorCloud() {
             50-100 серверов или 5000-10000 vCPU
           </div>
           <div>
-            <CheckboxEff store={_10000CPU} />
+            <RadioEff store={_CPU} radioValue={3} />
           </div>
         </div>
         <div className={styles.row}>
@@ -616,13 +610,13 @@ export default function CalculatorCloud() {
         <div className={styles.row_white}>
           <div className={styles.cell_start}>Низкий (для тестовых сред)</div>
           <div>
-            <CheckboxEff store={_LOW_AVAILABILITY} />
+            <RadioEff store={_AVAILABILITY} radioValue={1} />
           </div>
         </div>
         <div className={styles.row}>
           <div className={styles.cell_start}>Высокий (для продуктива)</div>
           <div>
-            <CheckboxEff store={_HIGH_AVAILABILITY} />
+          <RadioEff store={_AVAILABILITY} radioValue={2} />
           </div>
         </div>
         <div className={styles.row}>
@@ -638,7 +632,7 @@ export default function CalculatorCloud() {
         <div className={styles.row_white}>
           <div className={styles.cell_start}>Базовые инструменты LMA</div>
           <div>
-            <CheckboxEff store={_BASE_LMA} />
+            <img src={checked} />
           </div>
         </div>
         <div className={styles.row}>
@@ -687,8 +681,7 @@ export default function CalculatorCloud() {
         <div className={styles.table__footer}>
           <div className={styles.cell_start}></div>
           <div>
-            {/* <span>{calculateCost(allData).toLocaleString("ru-RU")} ₽ </span> */}
-            <span>1000</span>
+            <span>{Math.round(calculateCost(allData) / 1000)}</span>
             <br />
             тыс.руб
           </div>
