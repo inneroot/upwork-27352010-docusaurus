@@ -495,6 +495,533 @@ export default function CalculatorKuber() {
           </div>
         </div>
       </section>
+
+      <p></p>
+      <section className={clsx(styles.container__mobile, styles.container)}>
+        <span>Калькулятор стоимости построения кластера Kubernetes</span>
+        <div className={styles.table__head}>
+          <div className={styles.table__head__label}></div>
+          <div>
+            <img src={sm_prj} />
+            <br />
+            Малый проект
+          </div>
+          <div>
+            <img src={md_prj} />
+            <br />
+            Средний проект
+          </div>
+          <div>
+            <img src={lg_prj} />
+            <br />
+            Большой проект
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Кол-во стандартных воркеров</strong>
+            <TooltipStWorker />
+          </div>
+          <div />
+          <div />
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>10-20</div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>20-50</div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>50-100</div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Кол-во особых воркеров</strong>
+            <TooltipSpWorker />
+          </div>
+          <div />
+          <div />
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>10-20</div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>20-50</div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>50-100</div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Тип кластера</strong>
+            <TooltipCluster />
+          </div>
+          <div />
+          <div />
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Baremetal</div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Облако</div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Гибрид</div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Системы хранения данных</strong>
+            <TooltipStorage />
+          </div>
+          <div />
+          <div />
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>SDS</div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Классическая СХД</div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Не требуется</div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Уровень доступности</strong>
+            <TooltipAvailability />
+          </div>
+          <div />
+          <div />
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Низкий</div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Высокий</div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Мониторинг</strong>
+            <TooltipMonitoring />
+          </div>
+          <div />
+          <div />
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Базовые инструменты LMA</div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>
+            Интеграция с системами мониторинга заказчика
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={unchecked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Дополнительные услуги</strong>
+          </div>
+          <div />
+          <div />
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>
+            Помощь в выборе ЦОД
+            <TooltipCODHelp />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>
+            Помощь в выборе серверов
+            <TooltipServerHelp />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.table__footer}>
+          <div className={styles.cell_start}>
+            <br />
+            <strong>Стоимость, с НДС</strong>
+          </div>
+          <div>
+            <span>875</span>
+            <br />
+            тыс.руб
+          </div>
+          <div>
+            <span>1305</span>
+            <br />
+            тыс.руб
+          </div>
+          <div>
+            <span>1625</span>
+            <br />
+            тыс.руб
+          </div>
+        </div>
+      </section>
+
+      <section
+        className={clsx(styles.container, styles.container__mobile__calulate)}
+      >
+        <div className={styles.table__head}>
+          <div className={styles.table__head__label}></div>
+          <div>
+            <img src={calc_prj} />
+            <br />
+            Ваш проект
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Кол-во стандартных воркеров</strong>
+            <TooltipStWorker />
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>10-20</div>
+          <div>
+            <RadioEff store={_WorkSt} radioValue={1} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>20-50</div>
+          <div>
+            <RadioEff store={_WorkSt} radioValue={2} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>50-100</div>
+          <div>
+            <RadioEff store={_WorkSt} radioValue={3} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>
+              Кол-во особых
+              <br />
+              воркеров
+            </strong>
+            <TooltipSpWorker />
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>10-20</div>
+          <div>
+            <RadioEff store={_WorkSp} radioValue={1} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>20-50</div>
+          <div>
+            <RadioEff store={_WorkSp} radioValue={2} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>50-100</div>
+          <div>
+            <RadioEff store={_WorkSp} radioValue={3} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Тип кластера</strong>
+            <TooltipCluster />
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Baremetal</div>
+          <div>
+            <RadioEff store={_ClusterType} radioValue={1} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Облако</div>
+          <div>
+            <RadioEff store={_ClusterType} radioValue={2} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Гибрид</div>
+          <div>
+            <RadioEff store={_ClusterType} radioValue={3} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Системы хранения данных</strong>
+            <TooltipStorage />
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>SDS</div>
+          <div>
+            <RadioEff store={_StorageType} radioValue={1} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Классическая СХД</div>
+          <div>
+            <RadioEff store={_StorageType} radioValue={2} />
+          </div>
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Не требуется</div>
+          <div>
+            <RadioEff store={_StorageType} radioValue={3} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Уровень доступности</strong>
+            <TooltipAvailability />
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Низкий</div>
+          <div>
+            <RadioEff store={_AVAILABILITY} radioValue={1} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>Высокий</div>
+          <div>
+            <RadioEff store={_AVAILABILITY} radioValue={2} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Мониторинг</strong>
+            <TooltipMonitoring />
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>Базовые инструменты LMA</div>
+          <div>
+            <img src={checked} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>
+            Интеграция с системами мониторинга заказчика
+          </div>
+          <div>
+            <CheckboxEff store={_MONITORING_INTEGRATION} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.heading_start}>
+            <strong>Дополнительные услуги</strong>
+          </div>
+          <div />
+        </div>
+        <div className={styles.row_white}>
+          <div className={styles.cell_start}>
+            Помощь в выборе ЦОД
+            <TooltipCODHelp />
+          </div>
+          <div>
+            <CheckboxEff store={_HELP_COD} />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.cell_start}>
+            Помощь в выборе серверов
+            <TooltipServerHelp />
+          </div>
+          <div>
+            <CheckboxEff store={_HELP_SERVER} />
+          </div>
+        </div>
+        <div className={styles.table__footer}>
+          <div className={styles.cell_start}>
+            <br />
+            <strong>Стоимость, с НДС</strong>
+          </div>
+          <div>
+            <span>
+              {Math.round(calculateCost(allData) / 1000).toLocaleString(
+                "ru-RU"
+              )}
+              ₽
+            </span>
+            <br />
+            тыс.руб
+          </div>
+        </div>
+      </section>
     </>
   );
 }

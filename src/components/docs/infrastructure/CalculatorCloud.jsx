@@ -357,7 +357,7 @@ export default function CalculatorCloud() {
       </section>
 
       <section className={clsx(styles.container__mobile, styles.container)}>
-        <span>Калькулятор стоимости построения частного облака</span>{" "}
+        <span>Калькулятор стоимости построения частного облака</span>
         <div className={styles.table__head}>
           <div className={styles.table__head__label}></div>
           <div>
