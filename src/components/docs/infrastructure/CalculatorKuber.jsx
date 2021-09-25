@@ -3,39 +3,31 @@ import { createStore, createApi } from "effector";
 import { useStore } from "effector-react";
 import styles from "../building/Pricing.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-// import { calculateCost } from "./calc";
+import { calculateCost } from "./calc_kuber";
 import clsx from "clsx";
 import Tooltip from "../../common/Tooltip";
 import CheckboxEff from "../../common/CheckboxEff";
+import RadioEff from "../../common/RadioEff";
 
 //Инициализация всех переключателей с их значениями по умолчанию
 
 //Кол-во стандартных воркеров
-const _20WorkSt = createStore(false);
-const _50WorkSt = createStore(true);
-const _100WorkSt = createStore(false);
+const _WorkSt = createStore(2);
 
 //Кол-во особых воркеров
-const _20WorkSp = createStore(false);
-const _50WorkSp = createStore(true);
-const _100WorkSp = createStore(false);
+const _WorkSp = createStore(2);
 
 //Тип кластера
-const _Baremetal = createStore(false);
-const _Cloud = createStore(true);
-const _Hybrid = createStore(false);
+const _ClasterType = createStore(2);
 
 //Системы хранения данных
-const _SDS = createStore(false);
-const _SHD = createStore(true);
-const _NotNeed = createStore(false);
+const _StorageType = createStore(2);
 
 //Уровень доступности
-const _Low = createStore(false);
-const _High = createStore(true);
+const _AVAILABILITY = createStore(2);
 
 //Мониторинг
-const _BASE_LMA = createStore(true);
+const _BASE_LMA = true;
 const _MONITORING_INTEGRATION = createStore(false);
 
 //Дополнительные услуги
@@ -52,21 +44,12 @@ export default function CalculatorKuber() {
   const calc_prj = useBaseUrl(`/img/pricing/calc.svg`);
 
   const allData = {
-    _20WorkSt: useStore(_20WorkSt),
-    _50WorkSt: useStore(_50WorkSt),
-    _100WorkSt: useStore(_100WorkSt),
-    _20WorkSp: useStore(_20WorkSp),
-    _50WorkSp: useStore(_50WorkSp),
-    _100WorkSp: useStore(_100WorkSp),
-    _Baremetal: useStore(_Baremetal),
-    _Cloud: useStore(_Cloud),
-    _Hybrid: useStore(_Hybrid),
-    _SDS: useStore(_SDS),
-    _SHD: useStore(_SHD),
-    _NotNeed: useStore(_NotNeed),
-    _Low: useStore(_Low),
-    _High: useStore(_High),
-    _BASE_LMA: useStore(_BASE_LMA),
+    _WorkSt: useStore(_WorkSt),
+    _WorkSp: useStore(_WorkSp),
+    _ClasterType: useStore(_ClasterType),
+    _StorageType: useStore(_StorageType),
+    _AVAILABILITY: useStore(_AVAILABILITY),
+    _BASE_LMA,
     _MONITORING_INTEGRATION: useStore(_MONITORING_INTEGRATION),
     _HELP_COD: useStore(_HELP_COD),
     _HELP_SERVER: useStore(_HELP_SERVER),
@@ -131,7 +114,7 @@ export default function CalculatorKuber() {
             <img src={unchecked} />
           </div>
           <div>
-            <CheckboxEff store={_20WorkSt} />
+            <RadioEff store={_WorkSt} radioValue={1} />
           </div>
         </div>
         <div className={styles.row}>
@@ -146,7 +129,7 @@ export default function CalculatorKuber() {
             <img src={unchecked} />
           </div>
           <div>
-            <CheckboxEff store={_50WorkSt} />
+            <RadioEff store={_WorkSt} radioValue={2} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -161,7 +144,7 @@ export default function CalculatorKuber() {
             <img src={checked} />
           </div>
           <div>
-            <CheckboxEff store={_100WorkSt} />
+            <RadioEff store={_WorkSt} radioValue={3} />
           </div>
         </div>
         <div className={styles.row}>
@@ -189,7 +172,7 @@ export default function CalculatorKuber() {
             <img src={unchecked} />
           </div>
           <div>
-            <CheckboxEff store={_20WorkSp} />
+            <RadioEff store={_WorkSp} radioValue={1} />
           </div>
         </div>
         <div className={styles.row}>
@@ -204,7 +187,7 @@ export default function CalculatorKuber() {
             <img src={unchecked} />
           </div>
           <div>
-            <CheckboxEff store={_50WorkSp} />
+            <RadioEff store={_WorkSp} radioValue={2} />
           </div>
         </div>
         <div className={styles.row}>
@@ -219,7 +202,7 @@ export default function CalculatorKuber() {
             <img src={checked} />
           </div>
           <div>
-            <CheckboxEff store={_100WorkSp} />
+            <RadioEff store={_WorkSp} radioValue={3} />
           </div>
         </div>
         <div className={styles.row}>
@@ -247,7 +230,7 @@ export default function CalculatorKuber() {
             <img src={unchecked} />
           </div>
           <div>
-            <CheckboxEff store={_Baremetal} />
+            <RadioEff store={_ClasterType} radioValue={1} />
           </div>
         </div>
         <div className={styles.row}>
@@ -262,7 +245,7 @@ export default function CalculatorKuber() {
             <img src={unchecked} />
           </div>
           <div>
-            <CheckboxEff store={_Cloud} />
+            <RadioEff store={_ClasterType} radioValue={2} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -277,7 +260,7 @@ export default function CalculatorKuber() {
             <img src={checked} />
           </div>
           <div>
-            <CheckboxEff store={_Hybrid} />
+            <RadioEff store={_ClasterType} radioValue={3} />
           </div>
         </div>
         <div className={styles.row}>
@@ -304,7 +287,7 @@ export default function CalculatorKuber() {
             <img src={unchecked} />
           </div>
           <div>
-            <CheckboxEff store={_SDS} />
+            <RadioEff store={_StorageType} radioValue={1} />
           </div>
         </div>
         <div className={styles.row}>
@@ -319,7 +302,7 @@ export default function CalculatorKuber() {
             <img src={unchecked} />
           </div>
           <div>
-            <CheckboxEff store={_SHD} />
+            <RadioEff store={_StorageType} radioValue={2} />
           </div>
         </div>
         <div className={styles.row_white}>
@@ -334,7 +317,7 @@ export default function CalculatorKuber() {
             <img src={checked} />
           </div>
           <div>
-            <CheckboxEff store={_NotNeed} />
+            <RadioEff store={_StorageType} radioValue={3} />
           </div>
         </div>
         <div className={styles.row}>
@@ -361,7 +344,7 @@ export default function CalculatorKuber() {
             <img src={unchecked} />
           </div>
           <div>
-            <CheckboxEff store={_Low} />
+            <RadioEff store={_AVAILABILITY} radioValue={1} />
           </div>
         </div>
         <div className={styles.row}>
@@ -376,7 +359,7 @@ export default function CalculatorKuber() {
             <img src={checked} />
           </div>
           <div>
-            <CheckboxEff store={_High} />
+            <RadioEff store={_AVAILABILITY} radioValue={2} />
           </div>
         </div>
         <div className={styles.row}>
@@ -403,7 +386,7 @@ export default function CalculatorKuber() {
             <img src={checked} />
           </div>
           <div>
-            <CheckboxEff store={_BASE_LMA} />
+            <img src={checked} />
           </div>
         </div>
         <div className={styles.row}>
@@ -483,8 +466,12 @@ export default function CalculatorKuber() {
             цена с НДС
           </div>
           <div>
-            {/* <span>{calculateCost(allData).toLocaleString("ru-RU")} ₽ </span> */}
-            <span>600 000 ₽</span>
+            <span>
+              {(
+                Math.round(calculateCost(allData) / 1000) * 1000
+              ).toLocaleString("ru-RU")}
+              ₽
+            </span>
             <br />
             цена с НДС
           </div>
