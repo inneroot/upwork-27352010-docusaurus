@@ -33,6 +33,7 @@
   --ifm-toc-link-color: #091e42;
   --ifm-z-index-fixed: 0;
   --ifm-navbar-height: 82px;
+  --ifm-z-index-overlay: 1;
 }
 
 body {
@@ -124,4 +125,19 @@ h2 {
 .nav_btn:visited {
   color: white;
   border: 4px solid white;
+}
+/* .docSidebarContainer_node_modules-\@docusaurus-preset-classic-node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
+  display: block;
+} */
+
+@media (max-width: 996px) {
+  .docs-wrapper
+    .docSidebarContainer_node_modules-\@docusaurus-preset-classic-node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
+    display: block;
+    width: 0px;
+  }
+
+  aside .menu .menu--responsive button {
+    z-index: 0;
+  }
 }
