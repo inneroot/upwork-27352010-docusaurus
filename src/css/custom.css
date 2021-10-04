@@ -39,8 +39,6 @@
 body {
   color: var(--text-color-primary);
   background-color: var(--global-background-color);
-  /* background-image: url(/img/infra.png); */
-  /* background-size: 320px; */
   position: relative;
   font-size: 1rem;
 }
@@ -126,4 +124,3 @@ h2 {
   color: white;
   border: 4px solid white;
 }
-

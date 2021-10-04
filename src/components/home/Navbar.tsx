@@ -42,7 +42,9 @@ export default function Navbar() {
     <>
       <nav className={styles.navigation}>
         <div className={styles.logo}>
-          <img src={logoSrc} />
+          <a href={useBaseUrl("/")}>
+            <img src={logoSrc} />
+          </a>
         </div>
         <div className={styles.nav_links}>
           {navLinks.map((link) => (

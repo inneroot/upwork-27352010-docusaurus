@@ -10,7 +10,7 @@ function Footer() {
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span>
       <span>
-        <a href="#">Политика конфиденциальности</a>
+        <Link to="/politics">Политика конфиденциальности</Link>
       </span>
       <span>
         Иллюстрации <a href="#">Freepik Stories</a>
