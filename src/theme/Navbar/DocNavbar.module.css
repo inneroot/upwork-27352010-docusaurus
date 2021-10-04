@@ -116,8 +116,7 @@
   width: 100%;
   background: url(/img/chevron-down.svg) right center no-repeat;
 }
-
-.mobile_doc_nav_links_box ul {
+.mobile_doc_nav_links_box .mobile_doc_nav_links_category_links {
   padding: 18px 0;
   margin: 0;
   font-weight: 500;
@@ -126,26 +125,25 @@
 }
 
 .mobile_doc_nav_links_box ul li {
-  text-indent: 0;
-  display: block;
-  list-style: none;
-  margin: 22px 0;
 }
 
-.mobile_doc_nav_links_box ul li a {
+.mobile_doc_nav_links_box .mobile_doc_nav_links_category_links a {
+  display: block;
   color: var(--ifm-navbar-link-color);
   text-decoration: none;
   padding: 11px 0;
   padding-left: 1rem;
   text-indent: 0;
+  margin: 11px 0;
 }
 
-.mobile_doc_nav_links_box ul li a:hover {
+.mobile_doc_nav_links_box .mobile_doc_nav_links_category_links a:hover {
   color: var(--ifm-navbar-link-hover-color);
   text-decoration: none;
 }
-
-.mobile_doc_nav_links_box ul li .mobile_doc_link_active {
+.mobile_doc_nav_links_box
+  .mobile_doc_nav_links_category_links
+  .mobile_doc_link_active {
   padding-left: 1rem;
   border-left: 2px solid var(--ifm-navbar-link-hover-color);
   color: var(--ifm-navbar-link-hover-color);
