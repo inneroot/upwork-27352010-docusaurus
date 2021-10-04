@@ -1,4 +1,5 @@
 /* stylelint-disable docusaurus/copyright-header */
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -21,7 +22,8 @@
 }
 
 .hero__btns {
-  display: flex;
+  display: none;
+  /* display: flex; temporary disabled */
 }
 
 .hero__btns a {
@@ -108,7 +110,8 @@
   }
 
   .hero__btns {
-    display: flex;
+    display: none;
+    /* display: flex; temporary disabled */
     flex-direction: column;
   }
   .hero__btns a {

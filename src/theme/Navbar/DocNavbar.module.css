@@ -66,6 +66,104 @@
   height: calc(100vh - 5rem);
 }
 
+.mobile_doc_navivcation {
+  position: relative;
+  padding: 24px 0;
+  padding-right: 24px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.doc_menu_button {
+  padding: 12px 24px;
+  display: flex;
+  border: none;
+  cursor: pointer;
+  font-family: Montserrat;
+  background-color: var(--text-color-primary);
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 150%;
+  width: 100vw;
+  position: relative;
+  top: -28px;
+}
+
+.doc_menu_button img {
+  padding-right: 12px;
+}
+
+.mobile_doc_nav_links_box {
+  position: absolute;
+  background-color: white;
+  padding: 2rem;
+  width: 100%;
+  top: 44px;
+  height: 100vh;
+}
+
+.mobile_doc_nav_links_box div {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 150%;
+}
+.mobile_doc_nav_links_box .mobile_doc_nav_links_category {
+  width: 100%;
+  background: url(/img/chevron-down.svg) right center no-repeat;
+}
+
+.mobile_doc_nav_links_box ul {
+  padding: 18px 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 150%;
+}
+
+.mobile_doc_nav_links_box ul li {
+  text-indent: 0;
+  display: block;
+  list-style: none;
+  margin: 22px 0;
+}
+
+.mobile_doc_nav_links_box ul li a {
+  color: var(--ifm-navbar-link-color);
+  text-decoration: none;
+  padding: 11px 0;
+  padding-left: 1rem;
+  text-indent: 0;
+}
+
+.mobile_doc_nav_links_box ul li a:hover {
+  color: var(--ifm-navbar-link-hover-color);
+  text-decoration: none;
+}
+
+.mobile_doc_nav_links_box ul li .mobile_doc_link_active {
+  padding-left: 1rem;
+  border-left: 2px solid var(--ifm-navbar-link-hover-color);
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+.mobile_doc_nav_link_soon::after {
+  content: "Скоро";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 100%;
+  margin-left: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(0, 82, 204, 0.1);
+  color: var(--ifm-color-primary);
+}
+
 @media only screen and (max-width: 750px) {
   .mobile_nav_links_box {
     z-index: 10;
@@ -74,6 +172,7 @@
     justify-content: space-between;
     padding: 2rem;
   }
+
   .mobile_navigation_links {
     display: flex;
     flex-direction: column;
@@ -83,17 +182,25 @@
     line-height: 150%;
     color: white;
   }
+
   .mobile_navigation_links a {
     color: white;
     text-decoration: none;
     margin-bottom: 2rem;
   }
+
   .navigation {
     display: none;
   }
+
   .mobile_navigation {
     display: flex;
   }
+
+  .mobile_doc_navivcation {
+    display: block;
+  }
+
   .logo img {
     height: 24px;
   }

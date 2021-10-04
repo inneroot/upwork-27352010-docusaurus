@@ -35,6 +35,28 @@ module.exports = {
         },
       ],
     },
+    docNavbar: {
+      collections: [
+        {
+          name: "Услуги",
+          links: [
+            { label: "Построение процессов CI/CD", path: "services/building" },
+            {
+              label: "Создание инфраструктуры для разработки",
+              path: "services/infrastructure",
+            },
+          ],
+        },
+        {
+          name: "Общая информация",
+          links: [
+            { label: "О нас", path: "info/about" },
+            { label: "Контакты", path: "info/contacts" },
+          ],
+        },
+        { name: "База знаний", pending: true, links: [] },
+      ],
+    },
   },
   presets: [
     [

@@ -126,18 +126,4 @@ h2 {
   color: white;
   border: 4px solid white;
 }
-/* .docSidebarContainer_node_modules-\@docusaurus-preset-classic-node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
-  display: block;
-} */
 
-@media (max-width: 996px) {
-  .docs-wrapper
-    .docSidebarContainer_node_modules-\@docusaurus-preset-classic-node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
-    display: block;
-    width: 0px;
-  }
-
-  aside .menu .menu--responsive button {
-    z-index: 0;
-  }
-}
