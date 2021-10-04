@@ -68,7 +68,7 @@
 
 .mobile_doc_navivcation {
   position: relative;
-  padding: 24px 0;
+  padding: 24px 0 0 0;
   padding-right: 24px;
   display: none;
   justify-content: space-between;
