@@ -47,54 +47,33 @@ const MobileDocLinks = ({ docLinks, isVisible, setVisible, currentPath }) => {
   if (isVisible)
     return (
       <div className={styles.mobile_doc_nav_links_box}>
-        <div className={styles.mobile_doc_nav_links_category}>Услуги</div>
-        <div className={styles.mobile_doc_nav_links_category_links}>
-          <Link
-            to={`${docPref}services/building`}
-            onClick={toggle}
-            className={clsx(
-              currentPathEnds === "services/building" &&
-                styles.mobile_doc_link_active
-            )}
-          >
-            Построение процессов CI/CD
-          </Link>
-          <Link
-            to={`${docPref}services/infrastructure`}
-            onClick={toggle}
-            className={clsx(
-              currentPathEnds === "services/infrastructure" &&
-                styles.mobile_doc_link_active
-            )}
-          >
-            Создание инфраструктуры для разработки
-          </Link>
-        </div>
-        <div className={styles.mobile_doc_nav_links_category}>
-          Общая информация
-        </div>
-        <div className={styles.mobile_doc_nav_links_category_links}>
-          <Link
-            to={`${docPref}info/about`}
-            onClick={toggle}
-            className={clsx(
-              currentPathEnds === "info/about" && styles.mobile_doc_link_active
-            )}
-          >
-            О нас
-          </Link>
-          <Link
-            to={`${docPref}info/contacts`}
-            onClick={toggle}
-            className={clsx(
-              currentPathEnds === "info/contacts" &&
-                styles.mobile_doc_link_active
-            )}
-          >
-            Контакты
-          </Link>
-        </div>
-        <div className={styles.mobile_doc_nav_link_soon}>База знаний</div>
+        {docLinks.map((collection) => (
+          <div key={collection.label}>
+            <div
+              className={clsx(
+                collection.pending && styles.mobile_doc_nav_link_soon,
+                !collection.pending && styles.mobile_doc_nav_links_category
+              )}
+            >
+              {collection.label}
+            </div>
+            <div className={styles.mobile_doc_nav_links_category_links}>
+              {collection.links.map((link) => (
+                <Link
+                  to={docPref + link.path}
+                  key={link.path}
+                  onClick={toggle}
+                  className={clsx(
+                    currentPathEnds === link.path &&
+                      styles.mobile_doc_link_active
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     );
 
@@ -106,7 +85,7 @@ export default function Navbar() {
   const currentPath = location.pathname;
   const { siteConfig } = useDocusaurusContext();
   const navLinks = siteConfig.themeConfig.navbar.items;
-  const docLinks = {};
+  const docLinks = siteConfig.themeConfig.docNavbar.collections;
   const logoSrc = useBaseUrl("/img/logo.svg");
   const mmenux = useBaseUrl("/img/mmenux.svg");
   const mmenu = useBaseUrl("/img/mmenu.svg");

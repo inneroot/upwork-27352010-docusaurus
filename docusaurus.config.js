@@ -38,7 +38,7 @@ module.exports = {
     docNavbar: {
       collections: [
         {
-          name: "Услуги",
+          label: "Услуги",
           links: [
             { label: "Построение процессов CI/CD", path: "services/building" },
             {
@@ -48,13 +48,13 @@ module.exports = {
           ],
         },
         {
-          name: "Общая информация",
+          label: "Общая информация",
           links: [
             { label: "О нас", path: "info/about" },
             { label: "Контакты", path: "info/contacts" },
           ],
         },
-        { name: "База знаний", pending: true, links: [] },
+        { label: "База знаний", pending: true, links: [] },
       ],
     },
   },

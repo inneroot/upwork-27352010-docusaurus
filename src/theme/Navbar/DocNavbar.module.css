@@ -124,9 +124,6 @@
   line-height: 150%;
 }
 
-.mobile_doc_nav_links_box ul li {
-}
-
 .mobile_doc_nav_links_box .mobile_doc_nav_links_category_links a {
   display: block;
   color: var(--ifm-navbar-link-color);
@@ -141,6 +138,7 @@
   color: var(--ifm-navbar-link-hover-color);
   text-decoration: none;
 }
+
 .mobile_doc_nav_links_box
   .mobile_doc_nav_links_category_links
   .mobile_doc_link_active {
