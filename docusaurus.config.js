@@ -9,6 +9,15 @@ module.exports = {
   favicon: "img/favicon.ico",
   organizationName: "inneroot", // Usually your GitHub org/user name.
   projectName: "upwork-27352010-docusaurus", // Usually your repo name.
+  customFields: {
+    contacts: {
+      phone_label: "+7 (999) 222-33-44",
+      phone_href: "phone:+79992223344",
+      email: "info@geleor.ru",
+      telegram: "#",
+      whatsapp: "#",
+    },
+  },
   themeConfig: {
     colorMode: {
       disableSwitch: true,

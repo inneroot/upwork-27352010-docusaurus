@@ -26,9 +26,9 @@ export default function SectionOne() {
             <Link to="#" className="btn btn_primary">
               Презентация
             </Link>
-            <Link to="#" className="btn">
+            {/* <Link to="#" className="btn"> temporary disabled
               Задать вопрос
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div id={styles.image}>

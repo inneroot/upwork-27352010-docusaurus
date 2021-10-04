@@ -2,8 +2,12 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./SectionTwo.module.css";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 export default function SectionTwo() {
+  const { siteConfig } = useDocusaurusContext();
+  const contacts = siteConfig.customFields.contacts;
+  console.log("contacts", contacts);
   const OpenSrc = useBaseUrl("/img/open.svg");
   const CloseSrc = useBaseUrl("/img/close.svg");
   const LogoSrc = useBaseUrl("/img/logo.svg");
@@ -77,16 +81,16 @@ export default function SectionTwo() {
           <img id={styles.business_card_logo} src={LogoSrc} />
           <p>Профессиональные практики DevOps</p>
           <div id={styles.business_card_contacts}>
-            <a className={styles.card_email} href="mailto:it-company@info.ru">
-              it-company@info.ru
+            <a className={styles.card_email} href={`mailto:${contacts.email}`}>
+              {contacts.email}
             </a>
-            <a className={styles.card_telegram} href="#">
+            <a className={styles.card_telegram} href={contacts.telegram}>
               Telegram
             </a>
-            <a className={styles.card_phone} href="phone:+79992223344">
-              +7 (999) 222-33-44
+            <a className={styles.card_phone} href={contacts.phone_href}>
+              {contacts.phone_label}
             </a>
-            <a className={styles.card_whatsapp} href="#">
+            <a className={styles.card_whatsapp} href={contacts.whatsapp}>
               WhatsApp
             </a>
           </div>

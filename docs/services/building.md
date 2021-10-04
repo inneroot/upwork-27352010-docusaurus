@@ -8,7 +8,7 @@ import Hero from "../../src/components/docs/building/Hero"
 import Opportunities from "../../src/components/docs/building/Opportunities"
 import Workflow from "../../src/components/docs/building/Workflow"
 import Pricing from "../../src/components/docs/building/Pricing"
-import Contacts from "../../src/components/docs/building/Contacts"
+import Contacts from "../../src/components/common/Contacts"
 
 <Hero />
 

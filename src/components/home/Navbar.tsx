@@ -18,9 +18,9 @@ const MobileLinks = ({ navLinks, isVisible }) => {
             </Link>
           ))}
         </div>
-        <Link to="#" className="nav_btn">
+        {/* <Link to="#" className="nav_btn"> temporary disabled
           Задать вопрос
-        </Link>
+        </Link> */}
       </div>
     );
 
