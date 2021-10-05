@@ -118,9 +118,9 @@ export default function Navbar() {
       </nav>
       <nav className={styles.mobile_navigation}>
         <div className={styles.logo}>
-          <Link to={siteConfig.baseUrl}>
+          <a href={useBaseUrl("/")}>
             <img src={logoSrc} />
-          </Link>
+          </a>
         </div>
         <button className={styles.hamburger_button} onClick={toggle}>
           <img src={isVisible ? mmenux : mmenu} />
