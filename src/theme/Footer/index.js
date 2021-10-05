@@ -13,10 +13,10 @@ function Footer() {
         <Link to="/politics">Политика конфиденциальности</Link>
       </span>
       <span>
-        Иллюстрации <a href="#">Freepik Stories</a>
+        Иллюстрации <a href="https://stories.freepik.com">Freepik Stories</a>
       </span>
       <span>
-        Разработка дизайна сайта <a href="#">Анастасия Громова</a>
+        Разработка дизайна сайта <a href="https://www.behance.net/gromova1_10792">Анастасия Громова</a>
       </span>
     </footer>
   );
