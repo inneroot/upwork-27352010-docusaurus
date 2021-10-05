@@ -7,7 +7,6 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 export default function SectionTwo() {
   const { siteConfig } = useDocusaurusContext();
   const contacts = siteConfig.customFields.contacts;
-  console.log("contacts", contacts);
   const OpenSrc = useBaseUrl("/img/open.svg");
   const CloseSrc = useBaseUrl("/img/close.svg");
   const LogoSrc = useBaseUrl("/img/logo.svg");
