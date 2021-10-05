@@ -104,6 +104,7 @@
   width: 100%;
   top: 44px;
   height: 100vh;
+  z-index: 1;
 }
 
 .mobile_doc_nav_links_box div {
