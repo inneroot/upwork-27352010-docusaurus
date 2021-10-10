@@ -165,6 +165,15 @@
 .card_whatsapp::before {
   content: url(/img/whatsapp.svg);
 }
+@media only screen and (max-width: 1750px) {
+  #wrapper3 {
+    background-position: 25% center;
+    background-size: 70%;
+  }
+  .card2 {
+    padding-top: 2rem;
+  }
+}
 @media only screen and (max-width: 1500px) {
   #wrapper3 {
     background: none;
@@ -176,6 +185,7 @@
   }
   .card2 {
     margin-top: 0;
+    padding-top: 0;
   }
 }
 
