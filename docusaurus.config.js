@@ -1,21 +1,21 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: "Гелеор",
-  tagline: "Dinosaurs are cool",
+  tagline: "Geleor is cool",
   url: "https://inneroot.github.io",
-  baseUrl: "/upwork-27352010-docusaurus/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "inneroot", // Usually your GitHub org/user name.
-  projectName: "upwork-27352010-docusaurus", // Usually your repo name.
+  organizationName: "Geleor", // Usually your GitHub org/user name.
+  projectName: "Geleor Proj", // Usually your repo name.
   customFields: {
     contacts: {
-      phone_label: "+7 (999) 222-33-44",
-      phone_href: "phone:+79992223344",
+      phone_label: "+7 (964) 710-20-30",
+      phone_href: "phone:+79647102030",
       email: "info@geleor.ru",
-      telegram: "#",
-      whatsapp: "#",
+      telegram: "https://t.me/GeleorDevOps",
+      whatsapp: "https://wa.me/79647102030",
     },
   },
   themeConfig: {
